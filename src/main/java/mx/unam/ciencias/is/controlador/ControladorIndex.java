@@ -46,8 +46,8 @@ public class ControladorIndex {
     
     @RequestMapping(value="/peticion3", method = RequestMethod.GET)
     public ModelAndView peticion3(HttpServletRequest request,ModelMap model){
-        String parametro = request.getParameter("parametro");
-        System.out.println("La peticion2 es: =================>"+parametro);
+        String parametro = request.getParameter("param");
+        System.out.println("La peticion3 es: =================>"+parametro);
         model.addAttribute("parametro", parametro);
         return new ModelAndView("index",model);
     

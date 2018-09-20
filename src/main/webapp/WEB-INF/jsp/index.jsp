@@ -19,6 +19,15 @@
             <input id="parametro" type="text" name="param" placeholder="Parametro">
             <button> Apachurrame</button>
         </form>
+        
+        <br>
+        <hr>
+        <form action="/Repaso/guardaUsuario" method="GET">
+            <input id="nombre" type="text" name="nombre" placeholder="Nombre">
+            <input id="correo" type="email" name="correo" placeholder="Correo">
+            <input id="Contrasenia" type="password" name="contrasenia" placeholder="Contrasenia">
+            <button> Guardame</button>
+        </form>
     </body>
     
    

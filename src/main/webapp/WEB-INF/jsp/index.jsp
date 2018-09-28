@@ -28,6 +28,14 @@
             <input id="Contrasenia" type="password" name="contrasenia" placeholder="Contrasenia">
             <button> Guardame</button>
         </form>
+        
+        <br>
+        <form action="/Repaso/login" method="POST">
+            <input id="correo" name="username" placeholder="Usuario"/>
+            <input id="contrasena" name="password" type="password" placeholder="Contrasenia"/>
+            <button>login</button>              
+                
+        </form>
     </body>
     
    

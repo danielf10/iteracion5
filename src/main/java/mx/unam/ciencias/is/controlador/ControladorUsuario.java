@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 /**
  *
  * @author jonh
@@ -26,13 +27,16 @@ public class ControladorUsuario {
     private UsuarioDAO usuario_bd;
 
     
-    @RequestMapping(value="/guardaUsuario", method = RequestMethod.GET)
+    @RequestMapping(value="/guardaUsuario", method = RequestMethod.POST)
     public ModelAndView guardaUsuario(HttpServletRequest request,ModelMap model){
         String nombre = request.getParameter("nombre");
         String correo = request.getParameter("correo");
         String contrasenia = request.getParameter("contrasenia");
+        String rol = request.getParameter("rol");
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hash_password = passwordEncoder.encode(contrasenia) ;
         
-        Usuario nuevo = new Usuario(nombre,correo,contrasenia);
+        Usuario nuevo = new Usuario(nombre,correo,hash_password,rol);
         usuario_bd.guardar(nuevo);
         model.addAttribute("parametro","ME Guarde: "+nombre);
         return new ModelAndView("index",model);

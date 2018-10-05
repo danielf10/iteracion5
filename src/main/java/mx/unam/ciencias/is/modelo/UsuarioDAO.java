@@ -84,7 +84,7 @@ public class UsuarioDAO {
      * @param idUsuario
      * @return 
      */
-    public Usuario getPersona(long idUsuario) {
+    public Usuario getUsuario(long idUsuario) {
         Usuario persona = null;
         Session session = sessionFactory.openSession();
         Transaction tx = null;
@@ -109,7 +109,7 @@ public class UsuarioDAO {
      * @param correo
      * @return 
      */
-    public Usuario getPersona(String correo) {
+    public Usuario getUsuario(String correo) {
         Usuario result = null;
         Session session = sessionFactory.openSession();
         Transaction tx = null;

@@ -56,7 +56,7 @@ public class ControladorSesion {
         
         Usuario u = usuario_bd.getUsuario(principal.getName());
         model.addAttribute("usuario", u);
-        return new ModelAndView("perfil",model);
+        return new ModelAndView("perfilAdmin",model);
     }
     
     @RequestMapping(value="/root/inicioR")

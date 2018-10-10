@@ -1,8 +1,9 @@
 <%-- 
-    Document   : perfil
-    Created on : Oct 5, 2018, 9:54:03 AM
-    Author     : daniel
+    Document   : perfilAdmin
+    Created on : 06-oct-2018, 22:21:10
+    Author     : Daniel
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,10 +11,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Perfil</title>
+        <title>Admin</title>
     </head>
     <body>
-        <h1>Perfil</h1>
+        <h1>AdminPerfil</h1>
         <br>
         <h3>Nombre : ${usuario.getNombre()}</h3>
         <h3>Rol : ${usuario.getRol()}</h3>
@@ -22,7 +23,11 @@
             <button>logout</button>
         </form> 
         
+        <!--poner el boton para ver los usuarios denunciados   -->
         
+             <form action="/Repaso/logout"> 
+            <button>denunciados</button>
+        </form> 
       
     </body>
 </html>

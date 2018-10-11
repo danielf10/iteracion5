@@ -27,7 +27,7 @@
 	<link rel="stylesheet" href="<c:url value="/css/style.css"/>">
 
 	<!-- Modernizr JS -->
-        src="<c:url value="/js/ejemplo.js" />">
+        <script src="<c:url value="/js/ejemplo.js" />"></script>
 	<script src="<c:url value="/js/modernizr-2.6.2.min.js"/>"></script>
         
     </head>

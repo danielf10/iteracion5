@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 /**
  *
- * @author jonh
+ * @author Daniel
  */
 @Controller 
 public class ControladorUsuario {

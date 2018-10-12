@@ -10,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Perfil</title>
+        <title>Perfil prueba</title>
     </head>
     <body>
-        <h1>Perfil</h1>
+        <h1>Perfil prueba</h1>
         <br>
         <h3>Nombre : ${usuario.getNombre()}</h3>
         <h3>Rol : ${usuario.getRol()}</h3>

@@ -62,7 +62,7 @@
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>
 						<li><a href="contact.html">Contact</a></li>
-						<li class="btn-cta"><a href="#"><span>Get started</span></a></li>
+						<li class="btn-cta"><a href="<c:url value="../repaso"/>"><span>Get started</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -188,7 +188,7 @@
         <br>
         <sec:authorize access="!isAuthenticated()">
         <%--<c:if test="${usuario==nul}">--%>
-            <form action="/Repaso/login" method="POST">
+            <form action="/inicio/login" method="POST">
                 <input id="correo" name="username" placeholder="Usuario"/>
                 <input id="contrasena" name="password" type="password" placeholder="Contrasenia"/>
                 <button>login</button>              
@@ -213,6 +213,7 @@
         <br>
         
         <c:if test="${usuario!=nul}">
+            <h1>ke onda</h1>
             <h3>c:if</h3>
             Nombre usuario loggeado : ${usuario.nombre} 
             <br>

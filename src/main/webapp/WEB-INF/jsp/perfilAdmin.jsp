@@ -19,13 +19,13 @@
         <h3>Nombre : ${usuario.getNombre()}</h3>
         <h3>Rol : ${usuario.getRol()}</h3>
         
-        <form action="/Repaso/logout"> 
-            <button>logout</button>
+        <form action="/inicio/logout"> 
+            <button>hola</button>
         </form> 
         
         <!--poner el boton para ver los usuarios denunciados   -->
         
-             <form action="/Repaso/logout"> 
+             <form action="/inicio/admin/inicioA/verDenunciados"> 
             <button>denunciados</button>
         </form> 
       

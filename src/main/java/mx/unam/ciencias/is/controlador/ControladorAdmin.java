@@ -5,6 +5,7 @@
  */
 package mx.unam.ciencias.is.controlador;
 
+import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
 import mx.unam.ciencias.is.modelo.Usuario;
 import mx.unam.ciencias.is.modelo.UsuarioDAO;
@@ -20,5 +21,32 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  * @author Daniel
  */
 public class ControladorAdmin {
+    
+    //Instancia para operaciones con la base relacionadas con el cliente
+    @Autowired
+    private UsuarioDAO usuario_bd;
+
+    
+    @RequestMapping(value="/admin/eliminaUsuario", method = RequestMethod.POST)
+    public ModelAndView guardaUsuario(HttpServletRequest request,ModelMap model){
+        String nombre = request.getParameter("nombre");
+        String correo = request.getParameter("correo");
+        String contrasenia = request.getParameter("contrasenia");
+        String rol = request.getParameter("rol");
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hash_password = passwordEncoder.encode(contrasenia) ;
+        
+        Usuario nuevo = new Usuario(nombre,correo,hash_password,rol);
+        usuario_bd.guardar(nuevo);
+        model.addAttribute("parametro","ME Guarde: "+nombre);
+        return new ModelAndView("index",model);
+    
+    }
+    @RequestMapping(value="/verDenunciados")
+    public ModelAndView inicioU(HttpServletRequest request,ModelMap model ,Principal principal){
+        
+       
+        return new ModelAndView("admin_denunciados",model);
+    }
     
 }

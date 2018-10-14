@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
- * @author jonh
+ * @author daniel
  */
 @Controller 
 public class ControladorIndex {

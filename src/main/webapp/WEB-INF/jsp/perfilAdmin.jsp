@@ -25,7 +25,7 @@
         
         <!--poner el boton para ver los usuarios denunciados   -->
         
-             <form action="/inicio/admin/inicioA/verDenunciados"> 
+             <form action="/inicio/admin/verDenunciados"> 
             <button>denunciados</button>
         </form> 
       

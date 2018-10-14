@@ -20,6 +20,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  *
  * @author Daniel
  */
+@Controller 
 public class ControladorAdmin {
     
     //Instancia para operaciones con la base relacionadas con el cliente
@@ -42,7 +43,7 @@ public class ControladorAdmin {
         return new ModelAndView("index",model);
     
     }
-    @RequestMapping(value="/verDenunciados")
+    @RequestMapping(value="/admin/verDenunciados")
     public ModelAndView inicioU(HttpServletRequest request,ModelMap model ,Principal principal){
         
        

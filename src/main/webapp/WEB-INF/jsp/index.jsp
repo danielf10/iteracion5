@@ -62,7 +62,7 @@
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>
 						<li><a href="contact.html">Contact</a></li>
-						<li class="btn-cta"><a href="<c:url value="../repaso"/>"><span>Get started</span></a></li>
+						<li class="btn-cta"><a href="<c:url value="inicio/repaso"/>"><span>Get started</span></a></li>
 					</ul>
 				</div>
 			</div>

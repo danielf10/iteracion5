@@ -44,8 +44,8 @@ public class ControladorAdmin {
         return new ModelAndView("index",model);
     
     }
-    @RequestMapping(value="/admin/verDenunciados")
-    public ModelAndView verDenunciados(HttpServletRequest request,ModelMap model ,Principal principal){
+    @RequestMapping(value="/admin/verDenunciados", method = RequestMethod.GET)
+    public ModelAndView verDenunciados(HttpServletRequest request,ModelMap model ){
         
      //public ModelAndView puestoLista(ModelMap model,HttpServletRequest request) {
       List<Usuario> ps = usuario_bd.obtenerListaUsuario();

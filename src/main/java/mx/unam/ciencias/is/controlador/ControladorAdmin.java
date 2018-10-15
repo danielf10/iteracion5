@@ -6,6 +6,7 @@
 package mx.unam.ciencias.is.controlador;
 
 import java.security.Principal;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import mx.unam.ciencias.is.modelo.Usuario;
 import mx.unam.ciencias.is.modelo.UsuarioDAO;
@@ -44,10 +45,27 @@ public class ControladorAdmin {
     
     }
     @RequestMapping(value="/admin/verDenunciados")
-    public ModelAndView inicioU(HttpServletRequest request,ModelMap model ,Principal principal){
+    public ModelAndView verDenunciados(HttpServletRequest request,ModelMap model ,Principal principal){
         
-       
+     //public ModelAndView puestoLista(ModelMap model,HttpServletRequest request) {
+      List<Usuario> ps = usuario_bd.obtenerListaUsuario();
+
+      model.addAttribute("ps",ps);
         return new ModelAndView("admin_denunciados",model);
     }
+    
+    
+    /*
+    @RequestMapping(value="/admin/verDenunciados", method = RequestMethod.GET)
+    public ModelAndView puestoLista(ModelMap model,HttpServletRequest request) {
+      List<Usuario> ps = usuario_bd.obtenerListaUsuario();
+
+      model.addAttribute("ps",ps);
+        return new ModelAndView("admin_denunciados",model);
+    
+    }
+    
+    */
+    
     
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package mx.unam.ciencias.is.modelo;
-
+import java.util.List;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Column;

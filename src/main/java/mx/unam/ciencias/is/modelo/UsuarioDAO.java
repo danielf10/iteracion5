@@ -5,6 +5,8 @@
  */
 package mx.unam.ciencias.is.modelo;
 
+import java.util.List;
+import java.util.ArrayList;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -131,5 +133,41 @@ public class UsuarioDAO {
         }
         return result;
     }
+    
+    
+    
+     public List<Usuario> obtenerListaUsuario() {
+        
+            
+           
+             List<Usuario> result = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            String hql = " FROM Usuario";
+            Query query = session.createQuery(hql);
+            result = (List<Usuario>)query.list();
+            tx.commit();
+            
+            
+            
+            
+            
+            
+            
+            
+           
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return result;
+    }
+    
+    
+    
 
 }

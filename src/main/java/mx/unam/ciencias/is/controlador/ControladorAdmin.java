@@ -55,17 +55,6 @@ public class ControladorAdmin {
     }
     
     
-    /*
-    @RequestMapping(value="/admin/verDenunciados", method = RequestMethod.GET)
-    public ModelAndView puestoLista(ModelMap model,HttpServletRequest request) {
-      List<Usuario> ps = usuario_bd.obtenerListaUsuario();
-
-      model.addAttribute("ps",ps);
-        return new ModelAndView("admin_denunciados",model);
-    
-    }
-    
-    */
     
     
 }

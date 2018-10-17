@@ -5,6 +5,7 @@
  */
 package mx.unam.ciencias.is.controlador;
 
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import mx.unam.ciencias.is.modelo.Usuario;
 import mx.unam.ciencias.is.modelo.UsuarioDAO;
@@ -25,6 +26,8 @@ public class ControladorUsuario {
     //Instancia para operaciones con la base relacionadas con el cliente
     @Autowired
     private UsuarioDAO usuario_bd;
+    @Autowired
+    private UsuarioDAO use_bd;
 
     
     @RequestMapping(value="/guardaUsuario", method = RequestMethod.POST)
@@ -41,6 +44,16 @@ public class ControladorUsuario {
         model.addAttribute("parametro","ME Guarde: "+nombre);
         return new ModelAndView("index",model);
     
+    }
+    
+    @RequestMapping(value="/admin/verDenunciados", method = RequestMethod.GET)
+    public ModelAndView verDenunciados(HttpServletRequest request,ModelMap model ){
+        
+     //public ModelAndView puestoLista(ModelMap model,HttpServletRequest request) {
+      List<Usuario> ps = use_bd.obtenerListaUsuario();
+
+      model.addAttribute("ps",ps);
+        return new ModelAndView("admin_denunciados",model);
     }
     
    

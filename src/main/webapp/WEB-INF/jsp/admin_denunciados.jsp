@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,20 +31,20 @@
                             <th>id </th>
                             <th>nombre</th>
                             <th>correo</th>
-                            <th>contrasenia</th>
+                            
                             <th>rol</th>
                       
                             
                         </tr>
                     </thead>
-                        <c:forEach var="usuario" items="${ps}">
+                        <c:forEach var="user" items="${ps}">
                         <tbody>
-                        
-                            <th>${usuario.id}</th>
-                            <th>${usuario.nombre}</th>
-                            <th>${usuario.correo}</th>
-                             <th>${usuario.contrasenia}</th>
-                              <th>${usuario.rol}</th>
+                              
+                            <th>${user.idPersona}</th>
+                            <th>${user.nombre}</th>
+                            <th>${user.correo}</th>
+           
+                              <th>${user.rol}</th>
                               
                               
                               

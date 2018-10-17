@@ -58,6 +58,12 @@ public class ControladorIndex {
     
     }
     
+    @RequestMapping(value="/consulta")
+    public ModelAndView consulta(HttpServletRequest request,ModelMap model){
+        return new ModelAndView("consultaP",model);
+    
+    }
+    
     @RequestMapping(value="/peticion3", method = RequestMethod.GET)
     public ModelAndView peticion3(HttpServletRequest request,ModelMap model){
         String parametro = request.getParameter("param");

@@ -61,11 +61,10 @@
 							</ul>
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						<li class="btn-cta"><a href="<c:url value="/perfil"/>"><span>Get started</span></a></li>
+						<li><a href="<c:url value="/consulta"/>">Contact</a></li>
+						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Get started</span></a></li>
 					</ul>
 				</div>
-			</div>
 			
 		</div>
 	</nav>
@@ -79,8 +78,8 @@
 
 					<div class="row row-mt-15em">
 						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-							<span class="intro-text-small">Welcome to Splash</span>
-							<h1>Build website using this template.</h1>	
+							<span class="intro-text-small">Bienvenido</span>
+							<h1>Es hora de Estudiar </h1>	
 						</div>
 						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
 							<div class="form-wrap">
@@ -182,7 +181,7 @@
                 <option value="ROLE_Root">ROLE_Root</option>
                 
             </select>
-            <button> Guardame</button>
+            <button class="btn-cta"> Guardame</button>
         </form>
         
         <br>
@@ -194,6 +193,11 @@
                 <button>login</button>              
 
             </form>
+            
+            <form action="/inicio/consulta" method="GET">
+            
+            <button> Consulta</button>
+        </form>
         <%--</c:if>--%>
         </sec:authorize>
         <br>

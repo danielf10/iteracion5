@@ -145,7 +145,7 @@ public class UsuarioDAO {
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            String hql = " FROM Usuario";
+            String hql = " from Usuario";
             Query query = session.createQuery(hql);
             result = (List<Usuario>)query.list();
             tx.commit();

@@ -39,7 +39,7 @@
                     </thead>
                         <c:forEach var="user" items="${ps}">
                         <tbody>
-                              
+                        <h1>  ${user.nombre} </h1>
                             <th>${user.idPersona}</th>
                             <th>${user.nombre}</th>
                             <th>${user.correo}</th>

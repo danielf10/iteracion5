@@ -6,9 +6,13 @@
 package mx.unam.ciencias.is.controlador;
 
 import java.security.Principal;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import mx.unam.ciencias.is.modelo.Usuario;
 import mx.unam.ciencias.is.modelo.UsuarioDAO;
+import mx.unam.ciencias.is.modelo.Nivel;
+import mx.unam.ciencias.is.modelo.NivelDAO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -25,6 +29,7 @@ public class ControladorIndex {
     
     @Autowired
     private UsuarioDAO usuario_bd;
+    private NivelDAO nivel_bd;
     
      /**
       * Metodo que responde a la peticion raiz
@@ -60,6 +65,11 @@ public class ControladorIndex {
     
     @RequestMapping(value="/consulta")
     public ModelAndView consulta(HttpServletRequest request,ModelMap model){
+        List<Nivel> ps = nivel_bd.obtenerListaNivel();
+
+      model.addAttribute("ps",ps);
+        
+        
         return new ModelAndView("consultaP",model);
     
     }

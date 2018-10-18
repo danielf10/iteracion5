@@ -166,6 +166,41 @@ public class UsuarioDAO {
         }
         return result;
     }
+     
+     
+     
+     
+     
+     
+     public Usuario eliminarUsuario(String user) {
+        Usuario us = new Usuario();
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+           tx = session.beginTransaction();
+         
+            String hql = "  from Usuario where correo = :user";
+            Query query = session.createQuery(hql);
+            query.setParameter("user", user);
+            us = (Usuario)query.uniqueResult();
+       
+           
+           
+       session.delete(us);
+          // session.getTransaction().commit();
+            tx.commit();
+           
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+        return us;
+    }
     
     
     

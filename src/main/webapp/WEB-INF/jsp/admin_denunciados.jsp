@@ -1,4 +1,4 @@
-<%-- 
+    <%-- 
     Document   : admin_denunciados
     Created on : 12-oct-2018, 16:28:53
     Author     : Daniel
@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
             <style type="text/css">
              #agregar{
   width: 30%;}
@@ -46,7 +46,12 @@
            
                               <th>${user.rol}</th>
                               
-                              
+                              <th>  
+                                <form action="/inicio/admin/eliminaUsuario" method="POST">
+                                    <input id="user" name="persona" hidden="true" value="${user.correo}">
+                                    <button type="submit" class="btn btn-primary btn-lg active">Eliminar</button>
+                                </form> 
+                            </th>
                               
                               
                               

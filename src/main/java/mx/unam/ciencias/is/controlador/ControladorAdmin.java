@@ -31,17 +31,12 @@ public class ControladorAdmin {
     
     @RequestMapping(value="/admin/eliminaUsuario", method = RequestMethod.POST)
     public ModelAndView guardaUsuario(HttpServletRequest request,ModelMap model){
-        String nombre = request.getParameter("nombre");
-        String correo = request.getParameter("correo");
-        String contrasenia = request.getParameter("contrasenia");
-        String rol = request.getParameter("rol");
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String hash_password = passwordEncoder.encode(contrasenia) ;
+        String elimina=request.getParameter("persona");
+        System.out.println(elimina);
         
-        Usuario nuevo = new Usuario(nombre,correo,hash_password,rol);
-        usuario_bd.guardar(nuevo);
-        model.addAttribute("parametro","ME Guarde: "+nombre);
-        return new ModelAndView("index",model);
+         usuario_bd.eliminarUsuario(elimina);
+        
+        return new ModelAndView("admin_denunciados",model);
     
     }
     

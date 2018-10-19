@@ -62,7 +62,7 @@
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>
 						<li><a href="<c:url value="/consulta"/>">Contact</a></li>
-						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Get started</span></a></li>
+						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Consulta</span></a></li>
 					</ul>
 				</div>
 			
@@ -90,17 +90,29 @@
 									</ul>
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
-											<form action="#">
+											<form action="/Repaso/guardaUsuario" method="POST">
+                                                                                            
+                                                                                            
+                                                                                                <div class="row form-group">
+													<div class="col-md-12">
+														<label for="username">User</label>
+                                                                                                               
+														<input type="text" name="nombre" placeholder="Nombre de usuario" class="form-control" id="nombre">
+													</div>
+                                                                                                    </div>
+                                                                                            
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">Username or Email</label>
-														<input type="text" class="form-control" id="username">
+														<label for="username">Email</label>
+                                                                                                                
+														<input type="email" name="correo" placeholder="Correo" class="form-control" id="correo">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="password">Password</label>
-														<input type="password" class="form-control" id="password">
+                                                                                                               
+														<input type="password" placeholder="Contrasenia" class="form-control" name="contrasenia" id="Contrasenia">
 													</div>
 												</div>
 												<div class="row form-group">
@@ -119,17 +131,22 @@
 										</div>
 
 										<div class="tab-content-inner" data-content="login">
-											<form action="#">
+											
+                                                                                    <sec:authorize access="!isAuthenticated()">
+                                                                                    <form action="/inicio/login" method="POST">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">Username or Email</label>
-														<input type="text" class="form-control" id="username">
+                                                                                                            
+														<label for="username"> Email</label>
+														
+                                                                                                                <input type="text" name="username" placeholder="Correo" class="form-control" id="correo" >
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="password">Password</label>
-														<input type="password" class="form-control" id="password">
+                                                                                                                
+														<input type="password" name="password" placeholder="Contrasenia" class="form-control" id="contrasena">
 													</div>
 												</div>
 
@@ -138,6 +155,10 @@
 														<input type="submit" class="btn btn-primary" value="Login">
 													</div>
 												</div>
+                                                                                        
+                                                                                        </sec:authorize>
+            
+                                                                                        
 											</form>	
 										</div>
 
@@ -192,12 +213,7 @@
                 <input id="contrasena" name="password" type="password" placeholder="Contrasenia"/>
                 <button>login</button>              
 
-            </form>
             
-            <form action="/inicio/consulta" method="GET">
-            
-            <button> Consulta</button>
-        </form>
         <%--</c:if>--%>
         </sec:authorize>
         <br>

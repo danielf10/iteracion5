@@ -106,6 +106,12 @@ public class Usuario implements Serializable{
         this.rol=rol;
     }
     
+     public Usuario(String nombre, String correo, String contrasenia) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasenia = contrasenia;
+        
+    }
     
     
     

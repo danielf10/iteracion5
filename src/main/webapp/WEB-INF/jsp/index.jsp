@@ -90,7 +90,7 @@
 									</ul>
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
-											<form action="/Repaso/guardaUsuario" method="POST">
+											<form action="/inicio/guardaUsuario" method="POST">
                                                                                             
                                                                                             
                                                                                                 <div class="row form-group">
@@ -191,7 +191,7 @@
         
         <br>
         <hr>
-        <form action="/Repaso/guardaUsuario" method="POST">
+        <form action="/inicio/guardaUsuario" method="POST">
             <input id="nombre" type="text" name="nombre" placeholder="Nombre">
             <input id="correo" type="email" name="correo" placeholder="Correo">
             <input id="Contrasenia" type="password" name="contrasenia" placeholder="Contrasenia">

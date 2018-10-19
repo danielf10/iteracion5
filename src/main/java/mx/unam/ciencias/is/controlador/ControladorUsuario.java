@@ -42,7 +42,7 @@ public class ControladorUsuario {
         Usuario nuevo = new Usuario(nombre,correo,hash_password,rol);
         usuario_bd.guardar(nuevo);
         model.addAttribute("parametro","ME Guarde: "+nombre);
-        return new ModelAndView("index",model);
+        return new ModelAndView("guardarPerf",model);
     
     }
     

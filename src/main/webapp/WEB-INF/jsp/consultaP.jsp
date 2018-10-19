@@ -50,8 +50,25 @@
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>
+                     
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-6">
+                            <c:forEach var="niv" items="${nv}">
+                        <tbody>
+                            
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+					<a href="images/primaria.jpg" class="fh5co-project-item image-popup">
+						<figure>
+							<div class="overlay"><i class="ti-plus"></i></div>
+                                                        <img src="<c:url value="/images/primaria.jpg"/>" alt="Image" class="img-responsive">
+						</figure>
+						<div class="fh5co-text">
+							<h2>${niv.nombre}</h2>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+						</div>
+					</a>
+				</div>
+				<!--
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
 					<a href="images/primaria.jpg" class="fh5co-project-item image-popup">
 						<figure>
 							<div class="overlay"><i class="ti-plus"></i></div>
@@ -124,7 +141,10 @@
 						</div>
 					</a>
 				</div>
+                                                -->
+                        </tbody>
 
+                    </c:forEach>
 			</div>
 		</div>
 	</div>

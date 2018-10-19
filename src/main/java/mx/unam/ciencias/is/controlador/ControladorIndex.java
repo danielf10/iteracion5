@@ -9,8 +9,9 @@ import java.security.Principal;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import mx.unam.ciencias.is.modelo.Usuario;
-import mx.unam.ciencias.is.modelo.UsuarioDAO;
 import mx.unam.ciencias.is.modelo.Nivel;
+import mx.unam.ciencias.is.modelo.UsuarioDAO;
+
 import mx.unam.ciencias.is.modelo.NivelDAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,9 @@ public class ControladorIndex {
     
     @Autowired
     private UsuarioDAO usuario_bd;
-    private NivelDAO nivel_bd;
+     
+    @Autowired
+   NivelDAO nivel_bd;
     
      /**
       * Metodo que responde a la peticion raiz
@@ -63,11 +66,11 @@ public class ControladorIndex {
     
     }
     
-    @RequestMapping(value="/consulta")
+    @RequestMapping(value="/consulta", method = RequestMethod.GET)
     public ModelAndView consulta(HttpServletRequest request,ModelMap model){
-        List<Nivel> ps = nivel_bd.obtenerListaNivel();
+        List<Nivel> nv = nivel_bd.obtenerListaNivel();
 
-      model.addAttribute("ps",ps);
+      model.addAttribute("nv",nv);
         
         
         return new ModelAndView("consultaP",model);

@@ -28,7 +28,7 @@ import javax.persistence.Temporal;
 @Entity
 @Table(name="nivel")
 
-public class Nivel {
+public class Nivel  implements Serializable{
     
      @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")

@@ -35,6 +35,7 @@
             <list>
                 <!--Clases para el mapeo-->
                 <value>mx.unam.ciencias.is.modelo.Usuario</value>
+                <value>mx.unam.ciencias.is.modelo.Nivel</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -51,7 +52,7 @@
           en el paquete controlador, se esta haciendo uso de @Autowiring-->
     <!--Ejemplo para configurar bean-->
     <bean id="UsuarioDAO" class="mx.unam.ciencias.is.modelo.UsuarioDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
-    
+     <bean id="NivelDAO" class="mx.unam.ciencias.is.modelo.NivelDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     
     <!-- SpringSecurity -->
     <security:http pattern="/css/*" security="none"/>

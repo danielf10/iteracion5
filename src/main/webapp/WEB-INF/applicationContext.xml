@@ -36,6 +36,7 @@
                 <!--Clases para el mapeo-->
                 <value>mx.unam.ciencias.is.modelo.Usuario</value>
                 <value>mx.unam.ciencias.is.modelo.Nivel</value>
+                <value>mx.unam.ciencias.is.modelo.Materia</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -53,7 +54,7 @@
     <!--Ejemplo para configurar bean-->
     <bean id="UsuarioDAO" class="mx.unam.ciencias.is.modelo.UsuarioDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
      <bean id="NivelDAO" class="mx.unam.ciencias.is.modelo.NivelDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
-    
+    <bean id="MateriaDAO" class="mx.unam.ciencias.is.modelo.MateriaDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <!-- SpringSecurity -->
     <security:http pattern="/css/*" security="none"/>
     <security:http pattern="/imagenes/*" security="none"/>

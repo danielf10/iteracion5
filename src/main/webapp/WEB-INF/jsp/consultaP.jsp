@@ -61,7 +61,7 @@
                                             
 						<figure>
 							<div class="overlay"><i class="ti-plus"></i></div>
-                                                        <img src="<c:url value="/imagenes/universidad.jpg"/>" alt="Image" class="img-responsive">
+                                                        <img src="<c:url value="/imagenes/${niv.nombre}.jpg"/>" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
 							<h2>${niv.nombre}</h2>

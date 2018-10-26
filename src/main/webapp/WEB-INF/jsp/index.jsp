@@ -202,6 +202,12 @@
                 <option value="ROLE_Root">ROLE_Root</option>
                 
             </select>
+             <select name="rol" >
+                <option value="ROLE_Usuario">ROLE_Usuario</option>
+                <option value="ROLE_Admin">ROLE_Admin</option>
+                <option value="ROLE_Root">ROLE_Root</option>
+                
+            </select>
             <button class="btn-cta"> Guardame</button>
         </form>
         

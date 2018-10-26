@@ -30,32 +30,51 @@ public class Usuario implements Serializable{
     @Column(name = "id")
     //id del usuario
     private long idPersona;
+ 
+    //El nombre del usuario
+    @Column(name = "us")
+    private String us;
+    
+    //La contrasenia del usuario
+    @Column(name = "contrasenia")
+    private String contrasenia;
+    
+     //El correo del usuario
+    @Column(name = "correo")
+    private String correo;
     
     //El nombre del usuario
     @Column(name = "nombre")
     private String nombre;
     
-    //El correo del usuario
-    @Column(name = "correo")
-    private String correo;
     
-    //La contrasenia del usuario
-    @Column(name = "contrasenia")
-    private String contrasenia;
-
+     //El nombre del usuario
+    @Column(name = "app")
+    private String app;
+    
+     //El nombre del usuario
+    @Column(name = "apm")
+    private String apm;
+    
+     //El nombre del usuario
+    @Column(name = "telefono")
+    private String telefono;
+    
     @Column(name= "rol")
     private String rol;
+    
+     //El nombre del usuario
+    @Column(name = "denunciado")
+    private int denunciado;
+    
+     //El nombre del usuario
+    @Column(name = "foto")
+    private String foto;
 
-    public String getRol() {
-        return rol;
-    }
+   
+    
+    ///////////metodos set and get////////////////////
 
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
-    
-    
-    
     public long getIdPersona() {
         return idPersona;
     }
@@ -64,20 +83,12 @@ public class Usuario implements Serializable{
         this.idPersona = idPersona;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getUser() {
+        return us;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setUser(String user) {
+        this.us = user;
     }
 
     public String getContrasenia() {
@@ -88,30 +99,156 @@ public class Usuario implements Serializable{
         this.contrasenia = contrasenia;
     }
 
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApp() {
+        return app;
+    }
+
+    public void setApp(String app) {
+        this.app = app;
+    }
+
+    public String getApm() {
+        return apm;
+    }
+
+    public void setApm(String apm) {
+        this.apm = apm;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public int getDenunciado() {
+        return denunciado;
+    }
+
+    public void setDenunciado(int denunciado) {
+        this.denunciado = denunciado;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+    
+   
+    
+    ////////metodos constructores//////////
+
     public Usuario() {
     }
 
-    public Usuario(long idPersona, String nombre, String correo, String contrasenia,String rol) {
+    public Usuario(long idPersona, String user, String contrasenia, String correo) {
         this.idPersona = idPersona;
-        this.nombre = nombre;
-        this.correo = correo;
+        this.us = user;
         this.contrasenia = contrasenia;
-        this.rol =rol;
-    }
-
-    public Usuario(String nombre, String correo, String contrasenia,String rol) {
-        this.nombre = nombre;
         this.correo = correo;
-        this.contrasenia = contrasenia;
-        this.rol=rol;
     }
     
-     public Usuario(String nombre, String correo, String contrasenia) {
-        this.nombre = nombre;
-        this.correo = correo;
+    
+    
+    
+     public Usuario(String user, String contrasenia, String correo) {
+        this.us = user;
         this.contrasenia = contrasenia;
-        
+        this.correo = correo;
     }
+
+     
+   
+     
+     
+/*
+    public Usuario(long idPersona, String user, String contrasenia, String correo, String nombre, String app, String apm, String telefono, String rol, int denunciado, String foto) {
+        this.idPersona = idPersona;
+        this.user = user;
+        this.contrasenia = contrasenia;
+        this.correo = correo;
+        this.nombre = nombre;
+        this.app = app;
+        this.apm = apm;
+        this.telefono = telefono;
+        this.rol = rol;
+        this.denunciado = denunciado;
+        this.foto = foto;
+    }
+
+    public Usuario(String nombre, String apm, String telefono, String rol, String foto) {
+        this.nombre = nombre;
+        this.apm = apm;
+        this.telefono = telefono;
+        this.rol = rol;
+        this.foto = foto;
+    }
+
+    public Usuario(String nombre, String app, String apm, String rol, int denunciado) {
+        this.nombre = nombre;
+        this.app = app;
+        this.apm = apm;
+        this.rol = rol;
+        this.denunciado = denunciado;
+    }
+    
+
+    public Usuario(String user, String contrasenia, String correo, String nombre, String app, String apm, String telefono, String rol, int denunciado, String foto) {
+        this.user = user;
+        this.contrasenia = contrasenia;
+        this.correo = correo;
+        this.nombre = nombre;
+        this.app = app;
+        this.apm = apm;
+        this.telefono = telefono;
+        this.rol = rol;
+        this.denunciado = denunciado;
+        this.foto = foto;
+    }
+     
+     
+    
+    
+    
+*/    
+
+    public Usuario(String user, String contrasenia, String correo, String rol) {
+        this.us = user;
+        this.contrasenia = contrasenia;
+        this.correo = correo;
+        this.rol = rol;
+    }
+    
+    
     
     
     

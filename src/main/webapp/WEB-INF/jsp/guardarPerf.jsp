@@ -5,12 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,7 +29,7 @@
     </head>
     <body>
          
-        <nav>
+        <nav style="height:100px">
     <div class="nav-wrapper" style="background-image:url(imagenes/b3.jpg)" >
       <a href="#!" class="brand-logo">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -46,7 +45,7 @@
         
         <p>para completar el registro llena los campos por favor</p>
         
-        <form action="#">
+<form action="#">
 <div class="input-field col s12" >
     <select multiple>
       <option value="" disabled selected>Choose your option</option>
@@ -56,13 +55,22 @@
     </select>
     
   </div>
-</form>
+</form >
          
      
         
         <div class="row" style="width: 50%"  >
-    <form class="col s12">
-         
+    <form action="/inicio/guardaPerfil" method="POST" class="col s12">
+         <div class="row">
+             <div class="input-field col s6">
+        <select name="rol" >
+                <option value="ROLE_Usuario">ROLE_Usuario</option>
+                <option value="ROLE_Admin">ROLE_Admin</option>
+                <option value="ROLE_Root">ROLE_Root</option>
+                
+            </select>
+                 </div>
+             </div>
         
       <div class="row">
         <div class="input-field col s6">
@@ -91,26 +99,13 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
+          <input id="telefono" type="text" class="validate">
+          <label for="telefono">Telefono</label>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
+      
       </div>
-      <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email_inline" type="email" class="validate">
-            <label for="email_inline">Email</label>
-            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-          </div>
-        </div>
-      </div>
+     <input type="submit" class="btn btn-primary" value="Enviar">
     </form>
   </div>
         
@@ -127,6 +122,8 @@
                 <option value="ROLE_Root">ROLE_Root</option>
                 
             </select>
+            
+            <script src="<c:url value="/js/jquery.min.js"/>"></script>
            
     </body>
 </html>

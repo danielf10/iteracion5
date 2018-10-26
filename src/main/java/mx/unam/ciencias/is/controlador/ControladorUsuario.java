@@ -32,16 +32,16 @@ public class ControladorUsuario {
     
     @RequestMapping(value="/guardaUsuario", method = RequestMethod.POST)
     public ModelAndView guardaUsuario(HttpServletRequest request,ModelMap model){
-        String nombre = request.getParameter("nombre");
+        String usuario = request.getParameter("nombre");
         String correo = request.getParameter("correo");
         String contrasenia = request.getParameter("contrasenia");
         String rol = request.getParameter("rol");
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String hash_password = passwordEncoder.encode(contrasenia) ;
         
-        Usuario nuevo = new Usuario(nombre,correo,hash_password,rol);
+        Usuario nuevo = new Usuario(usuario,correo,hash_password,rol);
         usuario_bd.guardar(nuevo);
-        model.addAttribute("parametro","ME Guarde: "+nombre);
+        model.addAttribute("parametro","ME Guarde: "+usuario);
         return new ModelAndView("guardarPerf",model);
     
     }

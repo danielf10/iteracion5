@@ -76,6 +76,13 @@ public class ControladorIndex {
         return new ModelAndView("consultaP",model);
     
     }
+    @RequestMapping(value="/prueba", method = RequestMethod.GET)
+    public ModelAndView prueba(HttpServletRequest request,ModelMap model){
+        
+        
+        return new ModelAndView("prueba",model);
+    
+    }
     
    
     

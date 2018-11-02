@@ -15,113 +15,191 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         
-         <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
    
     <link rel="stylesheet" href="<c:url value="/css/style.css"/>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Bootstrap  -->
+	<link rel="stylesheet" href="<c:url value="/css/bootstrap.css"/>">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
     </head>
     <body>
          
-        <nav style="height:100px">
+        <!--<nav style="height:100px; margin-top:3% ">
     <div class="nav-wrapper" style="background-image:url(imagenes/b3.jpg)" >
       <a href="#!" class="brand-logo">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
+      <ul class="right hide-on-med-and-down" style="display: inline-block">
+        <li><a href="sass.html" style="display: inline-block">Sass</a></li>
+        <li><a href="badges.html" style="display: inline">Components</a></li>
         <li><a href="collapsible.html">Javascript</a></li>
         <li><a href="mobile.html">Mobile</a></li>
         <li><a class="waves-effect waves-light btn">button</a></li>
       </ul>
     </div>
-  </nav>
-        
-        <p>para completar el registro llena los campos por favor</p>
-        
-<form action="#">
-<div class="input-field col s12" >
-    <select multiple>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option><br>
-      <option value="2">Option 2</option><br>
-      <option value="3">Option 3</option>
-    </select>
+  </nav>-->
+        <div id="page">
+        <div class="page-inner">
+        <nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			
+			<div class="row">
+				<div class="col-sm-4 col-xs-12">
+					<div id="gtco-logo"><a href="index.html">SEC <em>.</em></a></div>
+				</div>
+				<div class="col-xs-8 text-right menu-1">
+					<ul>
+						<li><a href="features.html">Features</a></li>
+						<li><a href="tour.html">Tour</a></li>
+						<li class="has-dropdown">
+							<a href="#">Dropdown</a>
+							<ul class="dropdown">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">eCommerce</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="<c:url value="/prueba"/>">API</a></li>
+							</ul>
+						</li>
+						<li><a href="pricing.html">Pricing</a></li>
+						<li><a href="<c:url value="/consulta"/>">Contact</a></li>
+						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Consulta</span></a></li>
+					</ul>
+				</div>
+			
+		</div>
+	</nav>
     
-  </div>
-</form >
+    
+    
+       
+        
+
          
      
         
-        <div class="row" style="width: 50%"  >
-    <form action="/inicio/guardaPerfil" method="POST" class="col s12">
-         <div class="row">
-             <div class="input-field col s6">
-        <select name="rol" >
-                <option value="ROLE_Usuario">ROLE_Usuario</option>
-                <option value="ROLE_Admin">ROLE_Admin</option>
-                <option value="ROLE_Root">ROLE_Root</option>
-                
-            </select>
-                 </div>
-             </div>
+        <div class="row" style=" margin-left:40%"  >
+   
         
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">nombre</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">apellido materno</label>
-        </div>
-          <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">apellido paterno</label>
-          
-        </div>
-          <div>
-              
-          </div>
-      </div>
-      <div class="row">
-         
-        <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="telefono" type="text" class="validate">
-          <label for="telefono">Telefono</label>
-        </div>
-      </div>
+        
       
-      </div>
-     <input type="submit" class="btn btn-primary" value="Enviar">
-    </form>
-  </div>
         
-         <c:if test="${usuario!=nul}">
-            <h1>ke onda</h1>
-            <h3>c:if</h3>
-            Nombre usuario loggeado : ${usuario.nombre} 
-            <br>
-            Rol : ${usuario.rol}
-        </c:if>
-           <select name="ral" >
-                <option value="ROLE_Usuario">ROLE_Usuario</option>
-                <option value="ROLE_Admin">ROLE_Admin</option>
-                <option value="ROLE_Root">ROLE_Root</option>
+        
+            
+            <div class="gtco-section border-bottom">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-24">
+					<div class="col-md-6 animate-box">
+					<h3>completa todos los campos ${parametro}</h3>
+            <form action="/inicio/Gperfil" method="POST" >
+            <div class="row form-group">
+		<div class="col-md-12" style="margin-top:5%">
+                    <label for="nombre">nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="nombre">
+		</div>
                 
-            </select>
+                <div class="col-md-12" style="margin-top:5%">
+                    <label for="app">apellido paterno</label>
+                    <input type="text" name="app" id="app" class="form-control" placeholder="apellido paterno">
+		</div>
+                
+                <div class="col-md-12" style="margin-top:5%">
+                    <label for="apm">apellido materno</label>
+                    <input type="text" name="apm" id="apm" class="form-control" placeholder="apellido materno">
+		</div>
+                
+                <div class="col-md-12" style="margin-top:5%">
+                    <label for="telefono">telefono</label>
+                    <input type="text" name="telefono" id="telefono" class="form-control" placeholder="tel">
+		</div>
+                
+                 <div class="col-md-12" style="margin-top:5%">
+                
+                     <select id="selector" name="rol" onchange="muestraMas()">
+		<option value="alumno">alumno</option>
+		<option value="profesor">profesor</option>
+		<option value="ambos">ambos</option>
+                </select>
+	
+
+                    <div id="alumno" style="display: none;"
+	
+                        numero de cuenta:
+                        <input id="apellidos" name="apellidos" type="text" />
+                        nivel escolar:
+                        <input id="numtelefono" name="numtelefono" type="text" />
+                    </div>
+
+
+                    <div id="ambos" style="display: none;">
+                        <p>todos</p>
+                        ambos:
+                        <input id="apellidos" name="apellidos" type="text" />
+                        hola:
+                        <input id="numtelefono" name="numtelefono" type="text" />
+                    </div>
+
+                    <div id="profesor" style="display: none;">
+                        cvs:
+                        <input id="apellidos" name="apellidos" type="text" />
+                        hola:
+                        <input id="numtelefono" name="numtelefono" type="text" />
+                    </div>
+                     
+                
+           
+             </div>
+                <div class="col-md-12" style="margin-top:5%">
+                    <input id="hola" name="usuario" hidden="true" value="${parametro}">
+                 <input type="submit" class="btn btn-primary" value="Enviar">
+                  </div>
+							
+            </div>
+          </form>
+                                        
+       </div>
+                                    
+                                    </div> 
+                            </div>
+                    </div>
+                </div>
+            </div>
+                                        </div>
+                                        </div>
+                                        
+        <script type="text/javascript">
+            function muestraMas(){
+		var var1=document.getElementById('selector').value;
+		var var2=document.getElementById('alumno');
+		var var3=document.getElementById('profesor');
+		var var4=document.getElementById('ambos');
+		
+		
+		if(var1=="ambos"){
+			var3.style.display="none";
+			var2.style.display="none";
+			var4.style.display="block";
+		}
+
+
+		if(var1=="alumno"){
+			var4.style.display="none";
+			var3.style.display="none";
+			var2.style.display="block";
+		}
+		
+
+		if(var1=="profesor"){
+			var4.style.display="none";
+			var2.style.display="none";
+			var3.style.display="block";
+		}
+		
+		
+		
+
+                }
+            </script>
             
             <script src="<c:url value="/js/jquery.min.js"/>"></script>
            

@@ -170,6 +170,26 @@ public class Usuario implements Serializable{
     public Usuario() {
     }
 
+    public Usuario(long idPersona, String us, String contrasenia, String correo, String nombre, String app, String apm, String telefono, String rol, int denunciado, String foto) {
+        this.idPersona = idPersona;
+        this.us = us;
+        this.contrasenia = contrasenia;
+        this.correo = correo;
+        this.nombre = nombre;
+        this.app = app;
+        this.apm = apm;
+        this.telefono = telefono;
+        this.rol = rol;
+        this.denunciado = denunciado;
+        this.foto = foto;
+    }
+    
+    
+    
+    
+    
+    
+
     public Usuario(long idPersona, String user, String contrasenia, String correo) {
         this.idPersona = idPersona;
         this.us = user;
@@ -190,56 +210,7 @@ public class Usuario implements Serializable{
    
      
      
-/*
-    public Usuario(long idPersona, String user, String contrasenia, String correo, String nombre, String app, String apm, String telefono, String rol, int denunciado, String foto) {
-        this.idPersona = idPersona;
-        this.user = user;
-        this.contrasenia = contrasenia;
-        this.correo = correo;
-        this.nombre = nombre;
-        this.app = app;
-        this.apm = apm;
-        this.telefono = telefono;
-        this.rol = rol;
-        this.denunciado = denunciado;
-        this.foto = foto;
-    }
-
-    public Usuario(String nombre, String apm, String telefono, String rol, String foto) {
-        this.nombre = nombre;
-        this.apm = apm;
-        this.telefono = telefono;
-        this.rol = rol;
-        this.foto = foto;
-    }
-
-    public Usuario(String nombre, String app, String apm, String rol, int denunciado) {
-        this.nombre = nombre;
-        this.app = app;
-        this.apm = apm;
-        this.rol = rol;
-        this.denunciado = denunciado;
-    }
-    
-
-    public Usuario(String user, String contrasenia, String correo, String nombre, String app, String apm, String telefono, String rol, int denunciado, String foto) {
-        this.user = user;
-        this.contrasenia = contrasenia;
-        this.correo = correo;
-        this.nombre = nombre;
-        this.app = app;
-        this.apm = apm;
-        this.telefono = telefono;
-        this.rol = rol;
-        this.denunciado = denunciado;
-        this.foto = foto;
-    }
-     
-     
-    
-    
-    
-*/    
+ 
 
     public Usuario(String user, String contrasenia, String correo, String rol) {
         this.us = user;

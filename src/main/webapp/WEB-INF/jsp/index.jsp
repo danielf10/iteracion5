@@ -57,7 +57,7 @@
 								<li><a href="#">Web Design</a></li>
 								<li><a href="#">eCommerce</a></li>
 								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
+								<li><a href="<c:url value="/prueba"/>">API</a></li>
 							</ul>
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>

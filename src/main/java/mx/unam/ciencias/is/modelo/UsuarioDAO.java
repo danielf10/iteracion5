@@ -54,6 +54,31 @@ public class UsuarioDAO {
     
     }
     
+   /* public Usuario guardaP(String nombre, String app, String apm,String telefono,String rol) {
+        Usuario u = new Usuario();
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+           tx = session.beginTransaction();
+            
+           psto.setIdpuesto(pstos);
+           psto.setDescripcion(descripcion);
+           psto.setHorario(horario);
+           session.update(psto);
+            tx.commit();
+           
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+        return psto;
+    }*/
+    
     
     /**
      * Método que elimina a un usuario de la base de datos
@@ -135,7 +160,10 @@ public class UsuarioDAO {
     }
     
     
+    ////empiezan los nuevos metodos
     
+    
+    //metodo para dar una lista de usuarios
      public List<Usuario> obtenerListaUsuario() {
         
             
@@ -171,7 +199,7 @@ public class UsuarioDAO {
      
      
      
-     
+     //metodo para eliminar un usuario  de una lista 
      public Usuario eliminarUsuario(String user) {
         Usuario us = new Usuario();
         Session session = sessionFactory.openSession();
@@ -200,6 +228,59 @@ public class UsuarioDAO {
            session.close();
         }
         return us;
+    }
+     
+     
+     
+     //metodo para dar toda la  informacion de un usuario atraves de su nombre se user
+     
+     public Usuario getUsuario_user(String use) {
+        Usuario result = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            String hql = " from Usuario where us = :use";
+            Query query = session.createQuery(hql);
+            query.setParameter("use", use);
+            result = (Usuario)query.uniqueResult();
+            tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+        return result;
+    }
+     
+     
+     
+     //metodo para actualizar un usuario 
+     
+     public void actUser(Usuario u) {
+    
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+           tx = session.beginTransaction();
+         
+           session.update(u);
+           
+           tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+    
     }
     
     

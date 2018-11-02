@@ -41,10 +41,34 @@ public class ControladorUsuario {
         
         Usuario nuevo = new Usuario(usuario,correo,hash_password,rol);
         usuario_bd.guardar(nuevo);
-        model.addAttribute("parametro","ME Guarde: "+usuario);
+        model.addAttribute("parametro",usuario);
         return new ModelAndView("guardarPerf",model);
     
     }
+    
+    @RequestMapping(value="/Gperfil", method = RequestMethod.POST)
+    public ModelAndView guardaPerfil(HttpServletRequest request,ModelMap model){
+        String usuario = request.getParameter("usuario");
+        String nombre = request.getParameter("nombre");
+        String app = request.getParameter("app");
+        String apm = request.getParameter("apm");
+        String telefono = request.getParameter("telefono");
+        String rol = request.getParameter("rol");
+        
+        Usuario u = usuario_bd.getUsuario_user(usuario);
+        
+        u.setNombre(nombre);
+        u.setApp(app);
+        u.setApm(apm);
+        u.setTelefono(telefono);
+        u.setRol(rol);
+        
+        usuario_bd.actUser(u);
+         
+        return new ModelAndView("index",model);
+    
+    }
+    
     
     @RequestMapping(value="/admin/verDenunciados", method = RequestMethod.GET)
     public ModelAndView verDenunciados(HttpServletRequest request,ModelMap model ){

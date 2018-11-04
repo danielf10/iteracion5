@@ -235,7 +235,24 @@
         </sec:authorize>
         <sec:authorize access="hasRole('ROLE_Admin')">
             <h3>Es admin</h3>
+            
         </sec:authorize>
+            
+        <sec:authorize access="hasRole('alumno')">
+            <h3>Es alumno</h3>
+            
+        </sec:authorize>
+            
+            
+        <sec:authorize access="hasRole('profesor')">
+            <h3>Es profesor</h3>
+            
+        </sec:authorize>
+            
+         <sec:authorize access="hasRole('ambos')">
+            <h3>Es ambos</h3>
+            
+        </sec:authorize>   
         <br>
         
         <c:if test="${usuario!=nul}">

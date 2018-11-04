@@ -35,13 +35,14 @@ public class Usuario implements Serializable{
     @Column(name = "us")
     private String us;
     
-    //La contrasenia del usuario
-    @Column(name = "contrasenia")
-    private String contrasenia;
-    
      //El correo del usuario
     @Column(name = "correo")
     private String correo;
+    
+    
+    //La contrasenia del usuario
+    @Column(name = "contrasenia")
+    private String contrasenia;
     
     //El nombre del usuario
     @Column(name = "nombre")
@@ -170,11 +171,11 @@ public class Usuario implements Serializable{
     public Usuario() {
     }
 
-    public Usuario(long idPersona, String us, String contrasenia, String correo, String nombre, String app, String apm, String telefono, String rol, int denunciado, String foto) {
+    public Usuario(long idPersona, String us, String correo , String contrasenia, String nombre, String app, String apm, String telefono, String rol, int denunciado, String foto) {
         this.idPersona = idPersona;
         this.us = us;
-        this.contrasenia = contrasenia;
         this.correo = correo;
+         this.contrasenia = contrasenia;
         this.nombre = nombre;
         this.app = app;
         this.apm = apm;
@@ -190,20 +191,20 @@ public class Usuario implements Serializable{
     
     
 
-    public Usuario(long idPersona, String user, String contrasenia, String correo) {
+    public Usuario(long idPersona, String user, String correo, String contrasenia) {
         this.idPersona = idPersona;
         this.us = user;
-        this.contrasenia = contrasenia;
         this.correo = correo;
+        this.contrasenia = contrasenia;
     }
     
     
     
     
-     public Usuario(String user, String contrasenia, String correo) {
+     public Usuario(String user, String correo , String contrasenia) {
         this.us = user;
-        this.contrasenia = contrasenia;
         this.correo = correo;
+        this.contrasenia = contrasenia;
     }
 
      
@@ -212,10 +213,10 @@ public class Usuario implements Serializable{
      
  
 
-    public Usuario(String user, String contrasenia, String correo, String rol) {
+    public Usuario(String user, String correo, String contrasenia, String rol) {
         this.us = user;
-        this.contrasenia = contrasenia;
         this.correo = correo;
+        this.contrasenia = contrasenia;
         this.rol = rol;
     }
     

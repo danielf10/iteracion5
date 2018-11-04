@@ -116,9 +116,9 @@
                  <div class="col-md-12" style="margin-top:5%">
                 
                      <select id="selector" name="rol" onchange="muestraMas()">
-		<option value="alumno">alumno</option>
-		<option value="profesor">profesor</option>
-		<option value="ambos">ambos</option>
+		<option value="ROLE_Alumno">alumno</option>
+		<option value="ROLE_Profesor">profesor</option>
+		<option value="ROLE_Ambos">ambos</option>
                 </select>
 	
 

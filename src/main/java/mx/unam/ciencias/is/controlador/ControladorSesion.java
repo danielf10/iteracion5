@@ -39,6 +39,22 @@ public class ControladorSesion {
         if(request.isUserInRole("ROLE_Root")){
             return "redirect:/root/inicioR";
         }
+        
+       
+        //nuevo codigo
+        if(request.isUserInRole("ROLE_Alumno")){
+            return "redirect:/alum/inicioAl";
+        }
+        if(request.isUserInRole("ROLE_Profesor")){
+            return "redirect:/prof/inicioP";
+        }
+        if(request.isUserInRole("ROLE_Ambos")){
+            return "redirect:/amb/inicioAm";
+        }
+        
+        System.out.println("hola");
+        System.out.println(request);
+        
         return "index";
     }
     
@@ -67,6 +83,38 @@ public class ControladorSesion {
         
         return new ModelAndView("perfil",model);
     }
+    
+    
+    //nuevo codigo 
+    
+     @RequestMapping(value="/alum/inicioAl")
+    public ModelAndView inicioAl(HttpServletRequest request,ModelMap model ,Principal principal){
+        
+        Usuario u = usuario_bd.getUsuario(principal.getName());
+        model.addAttribute("usuario", u);
+        
+        return new ModelAndView("sessionAl",model);
+    }
+    
+    
+     @RequestMapping(value="/prof/inicioP")
+    public ModelAndView inicioP(HttpServletRequest request,ModelMap model ,Principal principal){
+        
+        //Usuario u = usuario_bd.getUsuario(principal.getName());
+        //model.addAttribute("usuario", u);
+        
+        return new ModelAndView("sessionP");
+    }
+    
+     @RequestMapping(value="/amb/inicioAm")
+    public ModelAndView inicioAm(HttpServletRequest request,ModelMap model ,Principal principal){
+        
+        Usuario u = usuario_bd.getUsuario(principal.getName());
+        model.addAttribute("usuario", u);
+        
+        return new ModelAndView("sessionAm",model);
+    }
+    
     
     
 }

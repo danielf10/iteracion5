@@ -68,7 +68,10 @@
         solo los que iniciaron sesion pueden acceder -->
         <security:intercept-url pattern="/sesion/*" access="isAuthenticated()" />
         <security:intercept-url pattern="/admin/*" access=" hasRole('ROLE_Admin')" />
-        <security:intercept-url pattern="/root/*" access="hasRole('ROLE_Root')" />
+        <security:intercept-url pattern="/root/*" access=" hasRole('ROLE_Root')" /> 
+        <security:intercept-url pattern="/alum/*" access=" hasRole('ROLE_Alumno')" />
+        <security:intercept-url pattern="/prof/*" access=" hasRole('ROLE_Profesor')" />
+        <security:intercept-url pattern="/amb/*" access=" hasRole('ROLE_Ambos')" />
         <!--se configura el comportamiento de el login -->
         <security:form-login login-page="/"
                              authentication-failure-url="/?login_error=1"

@@ -90,7 +90,7 @@
 									</ul>
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
-											<form action="/inicio/guardaUsuario" method="POST">
+											<form action="/inicio/guardaUsuario"  method="POST">
                                                                                             
                                                                                             
                                                                                                 <div class="row form-group">
@@ -118,7 +118,7 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="password2">Repeat Password</label>
-														<input type="password" class="form-control" id="password2">
+														<input type="password" class="form-control" id="password">
 													</div>
 												</div>
 
@@ -175,7 +175,17 @@
 	</header>
         
         
-        
+           <script type="text/javascript">
+              
+                   var p1 = document.getElementById("contrasenia").value;
+                    var p2 = document.getElementById("password").value;
+                    
+                    if (p1 != p2) {
+                             alert("Las contrasenias no iguales");
+                             
+                    } 
+                        
+               </script>
         
         
         

@@ -54,30 +54,7 @@ public class UsuarioDAO {
     
     }
     
-   /* public Usuario guardaP(String nombre, String app, String apm,String telefono,String rol) {
-        Usuario u = new Usuario();
-        Session session = sessionFactory.openSession();
-        Transaction tx = null;
-        try {
-           tx = session.beginTransaction();
-            
-           psto.setIdpuesto(pstos);
-           psto.setDescripcion(descripcion);
-           psto.setHorario(horario);
-           session.update(psto);
-            tx.commit();
-           
-        }
-        catch (Exception e) {
-           if (tx!=null){ 
-               tx.rollback();
-           }
-           e.printStackTrace(); 
-        }finally {
-           session.close();
-        }
-        return psto;
-    }*/
+   
     
     
     /**

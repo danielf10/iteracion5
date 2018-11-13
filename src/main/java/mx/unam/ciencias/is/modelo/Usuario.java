@@ -13,8 +13,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+
 
 
 @Entity
@@ -71,7 +74,20 @@ public class Usuario implements Serializable{
      //El nombre del usuario
     @Column(name = "foto")
     private String foto;
+    
+    
+    //relacion con el usuario-------alumno 
+   // @OneToOne
+   // private Alumno alumno;
 
+    //public Alumno getAlumno() {
+       // return alumno;
+    //}
+
+    //public void setAlumno(Alumno alumno) {
+        //this.alumno = alumno;
+    //}
+    /////////////////////////////////////////
    
     
     ///////////metodos set and get////////////////////

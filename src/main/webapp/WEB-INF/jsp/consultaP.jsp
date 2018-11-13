@@ -67,7 +67,7 @@
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>
 						<li><a href="<c:url value="/consulta"/>">Contact</a></li>
-						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Consulta</span></a></li>
+						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Inicio</span></a></li>
 					</ul>
 				</div>
 			
@@ -105,7 +105,7 @@
                         <tbody>
                             
                             <div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="<c:url value="/verMaterias"/>" class="fh5co-project-item ">
+					<a data-toggle="modal" data-target="#miModal" class="fh5co-project-item ">
                                             
                                             
 						<figure>
@@ -114,7 +114,7 @@
 						</figure>
 						<div class="fh5co-text">
 							<h2>${niv.nombre}</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+							
 						</div>
 					</a>
                                         
@@ -202,6 +202,66 @@
 	</div>
         </div>
         </div>
+        
+        
+        <div class="modal fade" id="miModal" tabindex="-1"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top:250px" aria-hidden="true">
+	<div class="modal-dialog" role="document" >
+		<div class="modal-content" >
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+
+				<h3 class="modal-title" id="myModalLabel" style="text-align:center ">Materias</h3>
+			</div>
+
+			<div class="modal-body" ">
+				<table>
+<tr>
+  <td><strong>Curso</strong></td>
+  <td><strong>Horas</strong></td>
+  <td><strong>Horario</strong></td>
+</tr>
+ 
+<tr>
+  <td>CSS</td>
+  <td>20</td>
+  <td>16:00 - 20:00</td>
+</tr>
+ 
+<tr>
+  <td>HTML</td>
+  <td>20</td>
+  <td>16:00 - 20:00</td>
+</tr>
+ 
+<tr>
+  <td>Dreamweaver</td>
+  <td>60</td>
+  <td>16:00 - 20:00</td>
+</tr>
+
+<tr>
+  <td>Dreamweaver</td>
+  <td>60</td>
+  <td>16:00 - 20:00</td>
+</tr>
+
+<tr>
+  <td>Dreamweaver</td>
+  <td>60</td>
+  <td>16:00 - 20:00</td>
+</tr>
+
+
+</table>
+			</div>
+		</div>
+	</div>
+</div>
+        
+        
+        
         
        <!-- jQuery -->
 	<script src="<c:url value="/js/jquery.min.js"/>"></script>

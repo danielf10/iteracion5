@@ -9,6 +9,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import mx.unam.ciencias.is.modelo.Usuario;
 import mx.unam.ciencias.is.modelo.UsuarioDAO;
+import mx.unam.ciencias.is.modelo.Alumno;
+import mx.unam.ciencias.is.modelo.AlumnoDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +30,8 @@ public class ControladorUsuario {
     private UsuarioDAO usuario_bd;
     @Autowired
     private UsuarioDAO use_bd;
+    //@Autowired
+    //private AlumnoDAO alumno_bd;
 
     
     @RequestMapping(value="/guardaUsuario", method = RequestMethod.POST)
@@ -35,6 +39,12 @@ public class ControladorUsuario {
         String usuario = request.getParameter("nombre");
         String correo = request.getParameter("correo");
         String contrasenia = request.getParameter("contrasenia");
+        String contrasenia2 = request.getParameter("contrasenia2");
+        if(contrasenia.equals(contrasenia2)){
+           
+            
+        
+        
         String rol = request.getParameter("rol");
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String hash_password = passwordEncoder.encode(contrasenia) ;
@@ -43,7 +53,8 @@ public class ControladorUsuario {
         usuario_bd.guardar(nuevo);
         model.addAttribute("parametro",usuario);
         return new ModelAndView("guardarPerf",model);
-    
+        }
+        return new ModelAndView("index");
     }
     
     @RequestMapping(value="/Gperfil", method = RequestMethod.POST)
@@ -63,7 +74,17 @@ public class ControladorUsuario {
         u.setTelefono(telefono);
         u.setRol(rol);
         
+        //falta capturar el id del usuario que es alumno 
         usuario_bd.actUser(u);
+        //Usuario us=usuario_bd.getUsuario(3);
+        
+       // if(rol.equals("ROLE_Alumno")){
+          //  Alumno a=new Alumno();
+            //alumno_bd.guardar(a);
+            
+            
+            
+        //}
          
         return new ModelAndView("index",model);
     

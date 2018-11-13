@@ -175,21 +175,21 @@
 		var var4=document.getElementById('ambos');
 		
 		
-		if(var1=="ambos"){
+		if(var1==="ambos"){
 			var3.style.display="none";
 			var2.style.display="none";
 			var4.style.display="block";
 		}
 
 
-		if(var1=="alumno"){
+		if(var1==="alumno"){
 			var4.style.display="none";
 			var3.style.display="none";
 			var2.style.display="block";
 		}
 		
 
-		if(var1=="profesor"){
+		if(var1==="profesor"){
 			var4.style.display="none";
 			var2.style.display="none";
 			var3.style.display="block";

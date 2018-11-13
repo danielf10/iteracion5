@@ -90,7 +90,7 @@
 									</ul>
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
-											<form action="/inicio/guardaUsuario"  method="POST">
+											<form action="/inicio/guardaUsuario"   onSubmit="return validarPasswd()"  method="POST">
                                                                                             
                                                                                             
                                                                                                 <div class="row form-group">
@@ -118,13 +118,13 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="password2">Repeat Password</label>
-														<input type="password" class="form-control" id="password">
+														<input type="password" class="form-control" name="contrasenia2" id="contrasenia2">
 													</div>
 												</div>
 
 												<div class="row form-group">
 													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary" value="Sign up">
+                                                                                                            <input type="submit" class="btn btn-primary" onclick="validarPasswd()" value="Sign up">
 													</div>
 												</div>
 											</form>	
@@ -176,20 +176,24 @@
         
         
            <script type="text/javascript">
-              
+              function validarPasswd(){
                    var p1 = document.getElementById("contrasenia").value;
                     var p2 = document.getElementById("password").value;
                     
-                    if (p1 != p2) {
-                             alert("Las contrasenias no iguales");
+                    if (p1==p2) {
+                            
                              
                     } 
+                    else{
+                     alert("Las contrasenias no iguales");
+                 }
+                }
                         
                </script>
         
         
         
-        
+        <!--
         <h1>Bienvenidos</h1>
          ${parametro}
         
@@ -206,6 +210,7 @@
             <input id="correo" type="email" name="correo" placeholder="Correo">
             <input id="Contrasenia" type="password" name="contrasenia" placeholder="Contrasenia">
             <!--<input type="text" name="rol" list="rol" placeholder="rol">-->
+            <!--
             <select name="rol" >
                 <option value="ROLE_Usuario">ROLE_Usuario</option>
                 <option value="ROLE_Admin">ROLE_Admin</option>
@@ -272,8 +277,8 @@
             <br>
             Rol : ${usuario.rol}
         </c:if>
-            
-        
+            -->
+        -->
    <!-- jQuery -->
 	<script src="<c:url value="/js/jquery.min.js"/>"></script>
 	<!-- jQuery Easing -->

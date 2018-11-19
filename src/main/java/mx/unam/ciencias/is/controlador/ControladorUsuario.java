@@ -6,13 +6,17 @@
 package mx.unam.ciencias.is.controlador;
 
 import java.util.List;
+import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import mx.unam.ciencias.is.modelo.Usuario;
 import mx.unam.ciencias.is.modelo.UsuarioDAO;
 import mx.unam.ciencias.is.modelo.Alumno;
 import mx.unam.ciencias.is.modelo.AlumnoDAO;
+import mx.unam.ciencias.is.modelo.Profesor;
+import mx.unam.ciencias.is.modelo.ProfesorDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,8 +34,11 @@ public class ControladorUsuario {
     private UsuarioDAO usuario_bd;
     @Autowired
     private UsuarioDAO use_bd;
-    //@Autowired
-    //private AlumnoDAO alumno_bd;
+    @Autowired
+    private AlumnoDAO alumno_bd;
+    
+    @Autowired
+    private ProfesorDAO profesor_bd;
 
     
     @RequestMapping(value="/guardaUsuario", method = RequestMethod.POST)
@@ -76,15 +83,37 @@ public class ControladorUsuario {
         
         //falta capturar el id del usuario que es alumno 
         usuario_bd.actUser(u);
-        //Usuario us=usuario_bd.getUsuario(3);
+        Usuario us=usuario_bd.getUsuario_user(usuario);
         
-       // if(rol.equals("ROLE_Alumno")){
-          //  Alumno a=new Alumno();
-            //alumno_bd.guardar(a);
+       if(rol.equals("ROLE_Alumno")){
+           System.out.println("hola soy un alumno");
+            Alumno a=new Alumno(0,us);
+            alumno_bd.guardar(a);
             
+            }
+       
+        if(rol.equals("ROLE_Profesor")){
+           System.out.println("hola soy un profesor");
+            Profesor p=new Profesor("curriculum",0,us);
+            profesor_bd.guardar(p);
             
+            }
+        
+        
+        if(rol.equals("ROLE_Ambos")){
+           System.out.println("hola soy un ambos");
+            Alumno a=new Alumno(0,us);
+            Profesor p=new Profesor("curriculum",0,us);
+            alumno_bd.guardar(a);
+            profesor_bd.guardar(p);
             
-        //}
+            }
+        
+        
+        
+        
+       
+       
          
         return new ModelAndView("index",model);
     

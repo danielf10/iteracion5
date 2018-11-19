@@ -13,7 +13,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 /**
@@ -25,9 +27,7 @@ import javax.persistence.Temporal;
 @Table(name="profesor")
 public class Profesor implements Serializable {
     
-    @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id")
-        private long idProfesor;
+    
     
     
    //cvs del profesor
@@ -40,14 +40,26 @@ public class Profesor implements Serializable {
     
     
     
+    //relacion profesor----usuario
+     @Id@OneToOne
+    @JoinColumn(name="id")
+    private Usuario usuario;
 
-    public long getIdProfesor() {
-        return idProfesor;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdProfesor(long idProfesor) {
-        this.idProfesor = idProfesor;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
+
+    
+    
+    
+    
+    
+
+    
 
     public String getCvs() {
         return cvs;
@@ -64,6 +76,22 @@ public class Profesor implements Serializable {
     public void setValidacion(int validacion) {
         this.validacion = validacion;
     }
+
+    public Profesor() {
+    }
+
+    
+    
+    
+   
+    
+    public Profesor(String cvs, int validacion, Usuario usuario) {
+        this.cvs = cvs;
+        this.validacion = validacion;
+        this.usuario = usuario;
+    }
+    
+    
     
     
     

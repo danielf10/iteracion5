@@ -278,7 +278,7 @@
             Rol : ${usuario.rol}
         </c:if>
             -->
-        -->
+        
    <!-- jQuery -->
 	<script src="<c:url value="/js/jquery.min.js"/>"></script>
 	<!-- jQuery Easing -->

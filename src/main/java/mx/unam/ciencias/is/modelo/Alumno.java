@@ -13,7 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.OneToOne;
@@ -28,47 +28,40 @@ import javax.persistence.JoinColumn;
 @Table(name="alumno")
 public class Alumno implements Serializable {
      
-    @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id")
-    private long idAlumno;
-    
-    
-    
-    
-    
-    
-    
-    //relacion Alumno----usuario
-    
-    //@Id@OneToOne
-    //@JoinColumn(name="id")
-    //private Usuario usuario;
-
-    //public Usuario getUsuario() {
-      //  return usuario;
-    //}
-
-    //public void setUsuario(Usuario usuario) {
-      //  this.usuario = usuario;
-    //}
-    
-    
-    
-    /////////////////////////////
-    
+   
+   
     
     //El validacion del alumno
     @Column(name = "validacion")
     private int validacion;
     
+    
+ //relacion Alumno----usuario
+     @Id@OneToOne
+    @JoinColumn(name="id")
+    private Usuario usuario;
 
-    public long getIdAlumno() {
-        return idAlumno;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdAlumno(long idAlumno) {
-        this.idAlumno = idAlumno;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
+
+
+
+
+
+
+
+
+     
+    
+   
+    
+
+    
 
     public int getValidacion() {
         return validacion;
@@ -81,17 +74,19 @@ public class Alumno implements Serializable {
     public Alumno() {
     
     }
+    
+    public Alumno(Usuario usuario)
+    {
+    this.usuario = usuario;
+    }
 
-   // public Alumno(Usuario usuario, int validacion) {
-     //   this.usuario = usuario;
-       // this.validacion = validacion;
-    //}
+    
 
-    //public Alumno(long idAlumno, Usuario usuario, int validacion) {
-      //  this.idAlumno = idAlumno;
-      //  this.usuario = usuario;
-        //this.validacion = validacion;
-    //}
+   public Alumno(int validacion,Usuario usuario) {
+        
+        this.validacion = validacion;
+        this.usuario = usuario;
+    }
     
     
     

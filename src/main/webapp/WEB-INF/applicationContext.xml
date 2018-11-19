@@ -37,6 +37,11 @@
                 <value>mx.unam.ciencias.is.modelo.Usuario</value>
                 <value>mx.unam.ciencias.is.modelo.Nivel</value>
                 <value>mx.unam.ciencias.is.modelo.Materia</value>
+                <value>mx.unam.ciencias.is.modelo.Alumno</value>
+                <value>mx.unam.ciencias.is.modelo.Profesor</value>
+                <value>mx.unam.ciencias.is.modelo.Session</value>
+                <value>mx.unam.ciencias.is.modelo.Pedir_session</value>
+                
             </list>
         </property>
         <property name="hibernateProperties">
@@ -55,6 +60,10 @@
     <bean id="UsuarioDAO" class="mx.unam.ciencias.is.modelo.UsuarioDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
      <bean id="NivelDAO" class="mx.unam.ciencias.is.modelo.NivelDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <bean id="MateriaDAO" class="mx.unam.ciencias.is.modelo.MateriaDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="AlumnoDAO" class="mx.unam.ciencias.is.modelo.AlumnoDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="ProfesorDAO" class="mx.unam.ciencias.is.modelo.ProfesorDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="SessionDAO" class="mx.unam.ciencias.is.modelo.SessionDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="Pedir_sessionDAO" class="mx.unam.ciencias.is.modelo.Pedir_sessionDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <!-- SpringSecurity -->
     <security:http pattern="/css/*" security="none"/>
     <security:http pattern="/imagenes/*" security="none"/>

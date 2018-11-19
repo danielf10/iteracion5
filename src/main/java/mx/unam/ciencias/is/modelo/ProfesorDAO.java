@@ -5,20 +5,18 @@
  */
 package mx.unam.ciencias.is.modelo;
 
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.Query;
 
-
 /**
  *
  * @author Daniel
  */
-public class AlumnoDAO {
-
-private SessionFactory sessionFactory;
+public class ProfesorDAO {
+    
+    private SessionFactory sessionFactory;
     
     /**
      * Inicializa la sesión para conectarse con la base de datos
@@ -28,18 +26,19 @@ private SessionFactory sessionFactory;
         this.sessionFactory = sessionFactory;
 }
     
+    
      /**
-     * Método que guarda el rol de alumno de un  usuario en la base de datos
-     * @param alumno
+     * Método que guarda el rol del profesor de un  usuario en la base de datos
+     * @param profesor
      */
-    public void guardar(Alumno alumno) {
+    public void guardar(Profesor profesor) {
     
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
            tx = session.beginTransaction();
          
-           session.persist(alumno);
+           session.persist(profesor);
            
            tx.commit();
         }
@@ -53,7 +52,11 @@ private SessionFactory sessionFactory;
         }
     
 }
-
-
+    
+    
+    
+    
+    
+    
     
 }

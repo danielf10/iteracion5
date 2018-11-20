@@ -68,7 +68,7 @@
         <div class="row" style=" margin-left:40%"  >
    
         
-        
+            <h1>${correo}</h1>
       
         
         
@@ -79,23 +79,24 @@
 				<div class="col-md-24">
 					<div class="col-md-6 animate-box">
 					<h3>crear clase</h3>
-            <form action="/prof/CrearAse" method="POST" >
+            <form action="/prof/crear" method="POST" >
                 
-                <select id="selector" name="rol" onchange="muestraMas()">
-		<option value="ROLE_Alumno">primaria</option>
-		<option value="ROLE_Profesor">secundaria</option>
-		<option value="ROLE_Ambos">preparatoria</option>
+                <select id="selector" name="nivel" onchange="muestraMas()">
+		<option value="primaria">primaria</option>
+		<option value="secundaria">secundaria</option>
+		<option value="preparatoria">preparatoria</option>
+                <option value="universidad">preparatoria</option>
                 </select>
                 
             <div class="row form-group">
 		<div class="col-md-12" style="margin-top:5%">
-                    <label for="tema">tema</label>
-                    <input type="text" name="tema" id="tema" class="form-control" placeholder="tema">
+                    <label for="materia">materia</label>
+                    <input type="text" name="materia" id="tema" class="form-control" placeholder="materia">
 		</div>
                 
                 <div class="col-md-12" style="margin-top:5%">
                     <label for="app">costo</label>
-                    <input type="text" name="cosot" id="costo" class="form-control" placeholder="$ costo">
+                    <input type="text" name="costo" id="costo" class="form-control" placeholder="$ costo">
 		</div>
                 
                
@@ -107,6 +108,8 @@
                   </div>
 							
             </div>
+                 
+                 <input id="hola" name="correoUs" hidden="true" value="${correo}">
           </form>
                                         
        </div>

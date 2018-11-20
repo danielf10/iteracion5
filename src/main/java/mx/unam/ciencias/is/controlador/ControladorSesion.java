@@ -100,10 +100,10 @@ public class ControladorSesion {
      @RequestMapping(value="/prof/inicioP")
     public ModelAndView inicioP(HttpServletRequest request,ModelMap model ,Principal principal){
         
-        //Usuario u = usuario_bd.getUsuario(principal.getName());
-        //model.addAttribute("usuario", u);
+        Usuario u = usuario_bd.getUsuario(principal.getName());
+        model.addAttribute("usuario", u);
         
-        return new ModelAndView("sessionP");
+        return new ModelAndView("sessionP",model);
     }
     
      @RequestMapping(value="/amb/inicioAm")

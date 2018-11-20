@@ -74,12 +74,20 @@
         
         <h3>Nombre : ${usuario.getNombre()}</h3>
         <h3>Rol : ${usuario.getRol()}</h3>
+        <h3>correo:${usuario.getCorreo()}</h3>
         
+        <form action="/inicio/prof/crearSes"> 
+            
+             <input id="hola" name="correoUs" hidden="true" value="${usuario.getCorreo()}">
+            
+            <button>crear Session </button>
+        </form>
+                
         
                 </div>
          </div>
         
-        !-- jQuery -->
+        <!-- jQuery -->
 	<script src="<c:url value="/js/jquery.min.js"/>"></script>
 	<!-- jQuery Easing -->
         <script src="<c:url value="/js/jquery.easing.1.3.js"/>"></script>

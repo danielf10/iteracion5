@@ -31,6 +31,23 @@ public class ControladorProfesor {
     
      @RequestMapping(value="/prof/crearSes", method = RequestMethod.GET)
     public ModelAndView materias(HttpServletRequest request,ModelMap model){
+        String correo=request.getParameter("correoUs");
+        model.addAttribute("correo",correo);
+        
+        return new ModelAndView("crear_asesoria",model);
+    
+    }
+    
+    
+    
+     @RequestMapping(value="/prof/crear", method = RequestMethod.GET)
+    public ModelAndView crear(HttpServletRequest request,ModelMap model){
+        String nivel=request.getParameter("nivel");
+        String correo=request.getParameter("correoUs");
+        String materia=request.getParameter("materia");
+        String costo=request.getParameter("costo");
+        
+        
         return new ModelAndView("crear_asesoria",model);
     
     }

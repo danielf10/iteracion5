@@ -16,6 +16,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+        
+    <form action="/inicio/materi" method="GET">
+        
+		<label for="username">materia</label>
+                                                                                                                
+            <input type="text" name="materia" placeholder="materia" class="form-control" id="materia">
+            
+             <input type="submit" class="btn btn-primary"  value="lol">
+     
+     </form>
+        
+        
+        
        
    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">

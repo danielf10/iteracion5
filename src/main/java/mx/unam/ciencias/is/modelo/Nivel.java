@@ -40,6 +40,10 @@ public class Nivel  implements Serializable{
     @Column(name = "nombre")
     private String nombre;
     
+    @OneToMany(mappedBy = "nivel")
+    private Set<Materia_Nivel> Materia_Nivels;
+    
+    
 
     public long getIdNivel() {
         return idNivel;
@@ -56,6 +60,22 @@ public class Nivel  implements Serializable{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    
+    @OneToMany(mappedBy = "nivel")
+    private Set<Materia> materias;
+
+    public Set<Materia> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(Set<Materia> materias) {
+        this.materias = materias;
+    }
+    
+    
+    
+    
 
     public Nivel(long idNivel, String nombre) {
         this.idNivel = idNivel;

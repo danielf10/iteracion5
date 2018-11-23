@@ -4,59 +4,52 @@
  * and open the template in the editor.
  */
 package mx.unam.ciencias.is.modelo;
-import java.util.List;
+
 import java.io.Serializable;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
+
+
+
 /**
  *
  * @author Daniel
  */
-
 @Entity
-@Table(name="materia")
-public class Materia {
+@Table(name="materia_nivel")
+public class Materia_Nivel implements Serializable {
     
     @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id")
-    //id del la materia 
-    private long idmateria;
+    @Column(name="id")
+    private long id;
     
-    //El nombre del la materia
-    @Column(name = "nombre")
-    private String nombre;
-
-   
-     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idnivel")
+    @ManyToOne
+    @JoinColumn(name="idMateria")
+    private Materia materia;
+    @ManyToOne
+    @JoinColumn(name="idNivel")
     private Nivel nivel;
 
-    public long getIdmateria() {
-        return idmateria;
+    public long getId() {
+        return id;
     }
 
-    public void setIdmateria(long idmateria) {
-        this.idmateria = idmateria;
-    }
-    
-     
-     
-     
-    public String getNombre() {
-        return nombre;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
     }
 
     public Nivel getNivel() {
@@ -66,21 +59,23 @@ public class Materia {
     public void setNivel(Nivel nivel) {
         this.nivel = nivel;
     }
-    
-    
-    public Materia() {
+
+    public Materia_Nivel() {
     }
 
-    public Materia(long idmateria, String nombre, Nivel nivel) {
-        this.idmateria = idmateria;
-        this.nombre = nombre;
+    public Materia_Nivel(long id, Materia materia, Nivel nivel) {
+        this.id = id;
+        this.materia = materia;
         this.nivel = nivel;
     }
 
-    public Materia(String nombre, Nivel nivel) {
-        this.nombre = nombre;
+    public Materia_Nivel(Materia materia, Nivel nivel) {
+        this.materia = materia;
         this.nivel = nivel;
     }
+    
+    
+    
     
     
     

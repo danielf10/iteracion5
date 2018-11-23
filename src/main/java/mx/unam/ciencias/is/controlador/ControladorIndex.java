@@ -14,6 +14,8 @@ import mx.unam.ciencias.is.modelo.UsuarioDAO;
 
 import mx.unam.ciencias.is.modelo.NivelDAO;
 
+import mx.unam.ciencias.is.modelo.Materia;
+import mx.unam.ciencias.is.modelo.MateriaDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -33,6 +35,8 @@ public class ControladorIndex {
      
     @Autowired
    NivelDAO nivel_bd;
+     @Autowired
+   MateriaDAO materia_bd;
     
      /**
       * Metodo que responde a la peticion raiz
@@ -50,10 +54,17 @@ public class ControladorIndex {
         return new ModelAndView("index",model);
     
     }
-    @RequestMapping(value="/peticion1", method = RequestMethod.GET)
-    public void peticion1(HttpServletRequest request){
-        String parametro = request.getParameter("parametro");
-        System.out.println("La peticion1 es: =================>"+parametro);
+    @RequestMapping(value="/materi", method = RequestMethod.GET)
+    public ModelAndView materi(HttpServletRequest request,ModelMap model){
+        String materia = request.getParameter("materia");
+        Nivel nivel= nivel_bd.getNivel(1);
+        Materia mater=new Materia(materia,nivel);
+        materia_bd.guardar(mater);
+        
+        
+        
+        
+        return new ModelAndView("index");
     
     }
     

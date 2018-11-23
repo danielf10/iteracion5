@@ -30,6 +30,56 @@ public class NivelDAO {
     }
     
     
+    public void guardar(Nivel nivel) {
+    
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+           tx = session.beginTransaction();
+         
+           session.persist(nivel);
+           
+           tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+    
+    }
+    
+    
+    /**
+     * Método que regresa el perfil, cuyo id es el que se pasa como 
+     * parámetro
+     * @param id
+     * @return 
+     */
+    public Nivel getNivel(long id) {
+        Nivel niv = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+           tx = session.beginTransaction();
+           niv = (Nivel)session.get(Nivel.class, id);
+           tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+        return niv;
+    }
+    
+    
      public List<Nivel> obtenerListaNivel() {
         
             
@@ -43,15 +93,6 @@ public class NivelDAO {
             Query query = session.createQuery(hql);
             result = (List<Nivel>)query.list();
             tx.commit();
-            
-            
-            
-            
-            
-            
-            
-            
-           
         } catch (RuntimeException e) {
             e.printStackTrace();
         } finally {
@@ -59,6 +100,7 @@ public class NivelDAO {
             session.close();
         }
         return result;
-    }
+}
+     
     
 }

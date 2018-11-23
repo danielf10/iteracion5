@@ -41,6 +41,8 @@
                 <value>mx.unam.ciencias.is.modelo.Profesor</value>
                 <value>mx.unam.ciencias.is.modelo.Session</value>
                 <value>mx.unam.ciencias.is.modelo.Pedir_session</value>
+                <value>mx.unam.ciencias.is.modelo.Materia_Nivel</value>
+                
                 
             </list>
         </property>
@@ -64,6 +66,7 @@
     <bean id="ProfesorDAO" class="mx.unam.ciencias.is.modelo.ProfesorDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <bean id="SessionDAO" class="mx.unam.ciencias.is.modelo.SessionDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <bean id="Pedir_sessionDAO" class="mx.unam.ciencias.is.modelo.Pedir_sessionDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="Materia_Nivel" class="mx.unam.ciencias.is.modelo.Materia_NivelDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <!-- SpringSecurity -->
     <security:http pattern="/css/*" security="none"/>
     <security:http pattern="/imagenes/*" security="none"/>

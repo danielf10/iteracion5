@@ -40,8 +40,7 @@ public class Nivel  implements Serializable{
     @Column(name = "nombre")
     private String nombre;
     
-    @OneToMany(mappedBy = "nivel")
-    private Set<Materia_Nivel> Materia_Nivels;
+    
     
     
 

@@ -100,24 +100,31 @@
 				</div>
 			</div>
                      
+                    
 			<div class="row">
                             <c:forEach var="niv" items="${nv}">
                         <tbody>
                             
                             <div class="col-lg-4 col-md-4 col-sm-6">
-					<a data-toggle="modal" data-target="#miModal" class="fh5co-project-item ">
+                                
+                                    <form action="/inicio/consultaMat" method="GET">
+					
+                                        <div data-toggle="modal" data-target="#miModal" class="fh5co-project-item ">
                                             
-                                            
+                           
 						<figure>
 							<div class="overlay"><i class="ti-plus"></i></div>
                                                         <img src="<c:url value="/imagenes/${niv.nombre}.jpg"/>" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
 							<h2>${niv.nombre}</h2>
+                                                        <h3> ${niv.idNivel}  </h3>
 							
+                                                         <input id="hola" name="mate" hidden="true" value="${niv.idNivel}">
 						</div>
-					</a>
-                                        
+                                                <button data-toggle="modal" data-target="#miModal" >hola</button>
+			</div>
+                                    </form>
 				</div>
 				<!--
                                         <div class="col-lg-4 col-md-4 col-sm-6">
@@ -252,15 +259,21 @@
   <td>60</td>
   <td>16:00 - 20:00</td>
 </tr>
-
+<tr>
+   <td</td>
+   </tr>
 
 </table>
+                        
+                        
+                        
 			</div>
 		</div>
 	</div>
 </div>
         
-        
+         
+            
         
         
        <!-- jQuery -->

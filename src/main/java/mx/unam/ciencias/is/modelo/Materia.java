@@ -36,10 +36,12 @@ public class Materia {
     private String nombre;
 
    
-     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idnivel")
+     @ManyToOne
+    @JoinColumn(name="idnivel")
     private Nivel nivel;
-
+    
+    
+     
     public long getIdmateria() {
         return idmateria;
     }

@@ -68,7 +68,7 @@
         <div class="row" style=" margin-left:40%"  >
    
         
-            <h1>${correo}</h1>
+         
       
         
         
@@ -77,40 +77,77 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-24">
-					<div class="col-md-6 animate-box">
+	<div class="col-md-6 animate-box">
 					<h3>crear clase</h3>
-            <form action="/prof/crear" method="POST" >
+             <h1>${correo}</h1>
+         
+               
+              
+                    <form action="/inicio/prof/crearSes/verMat" method="GET" >
+                    <input id="hola" name="nivel" hidden="true" value="1">
+                           <input id="hola" name="correoUs" hidden="true" value="${Correo}">
+                    <button>primaria</button>
+                    
+                    </form>  
+               
+                        <form action="/inicio/prof/crearSes/verMat" method="GET" >
+                        <input id="hola" name="nivel" hidden="true" value="2">
+                               <input id="hola" name="correoUs" hidden="true" value="${correo}">
+                        <button>secundaria</button>
+                    
+                        </form>  
+                    
+                        <form action="/inicio/prof/crearSes/verMat" method="GET" >
+                        <input id="hola" name="nivel" hidden="true" value="3">
+                               <input id="hola" name="correoUs" hidden="true" value="${correo}">
+                        <button>prepapratoria</button>
+                    
+                        </form>  
+                    
+                        <form action="/inicio/prof/crearSes/verMat" method="GET" >
+                        <input id="hola" name="nivel" hidden="true" value="4">
+                               <input id="hola" name="correoUs" hidden="true" value="${correo}">
+                        <button>universidad</button>
+                    
+                        </form>  
+               
+           
+               
+                 <form action="/inicio/prof/crearSes/crear" method="GET" >   
+                   <c:forEach items="${mat}" var="m">
+                        <div> 
+                        <input type="radio" value="${m.idmateria}" name="materia">${m.nombre}<br>
+                    
+                    
+                        </div>
+                   </c:forEach>
+                    
+                    
                 
-                <select id="selector" name="nivel" onchange="muestraMas()">
-		<option value="primaria">primaria</option>
-		<option value="secundaria">secundaria</option>
-		<option value="preparatoria">preparatoria</option>
-                <option value="universidad">preparatoria</option>
-                </select>
                 
-            <div class="row form-group">
-		<div class="col-md-12" style="margin-top:5%">
-                    <label for="materia">materia</label>
-                    <input type="text" name="materia" id="tema" class="form-control" placeholder="materia">
-		</div>
                 
-                <div class="col-md-12" style="margin-top:5%">
+                
+                
+                
+                
+            
+                
+                    <div class="col-md-12" style="margin-top:5%">
                     <label for="app">costo</label>
                     <input type="text" name="costo" id="costo" class="form-control" placeholder="$ costo">
-		</div>
+                    </div>
                 
                
                 
+                <input id="hola" name="correoUs" hidden="true" value="${correo}">
                 
-                <div class="col-md-12" style="margin-top:5%">
-                    <input id="hola" name="usuario" hidden="true" value="${parametro}">
-                 <input type="submit" class="btn btn-primary" value="Enviar">
-                  </div>
-							
+                 <button>crear</button>
+               
+          </form>
+                    					
             </div>
                  
-                 <input id="hola" name="correoUs" hidden="true" value="${correo}">
-          </form>
+                 
                                         
        </div>
                                     

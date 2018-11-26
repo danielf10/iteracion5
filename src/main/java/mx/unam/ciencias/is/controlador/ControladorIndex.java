@@ -57,7 +57,7 @@ public class ControladorIndex {
     @RequestMapping(value="/materi", method = RequestMethod.GET)
     public ModelAndView materi(HttpServletRequest request,ModelMap model){
         String materia = request.getParameter("materia");
-        Nivel nivel= nivel_bd.getNivel(1);
+        Nivel nivel= nivel_bd.getNivel(4);
         Materia mater=new Materia(materia,nivel);
         materia_bd.guardar(mater);
         
@@ -103,4 +103,44 @@ public class ControladorIndex {
         return new ModelAndView("materia",model);
     
     }
+    
+    
+    @RequestMapping(value="/consultaMat", method = RequestMethod.GET)
+    public ModelAndView p(HttpServletRequest request,ModelMap model){
+        
+        Long id = Long.parseLong(request.getParameter("mate"));
+       System.out.println(id+"- hola");
+       List<Materia> materias = materia_bd.getMateriasPorNivel(id);
+        if(materias!=null){
+           model.addAttribute("mat",materias);
+        
+        }
+        
+        return new ModelAndView("materias",model);
+    
+    
+    
+}
+    
+    
+     @RequestMapping(value="/verProf", method = RequestMethod.GET)
+    public ModelAndView profe(HttpServletRequest request,ModelMap model){
+        
+        Long id = Long.parseLong(request.getParameter("mate"));
+       System.out.println(id+"- hola");
+       List<Materia> materias = materia_bd.getMateriasPorNivel(id);
+        if(materias!=null){
+           model.addAttribute("mat",materias);
+        
+        }
+        
+        return new ModelAndView("materias",model);
+    
+    
+    
+}
+    
+    
+    
+    
 }

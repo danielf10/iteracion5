@@ -15,6 +15,9 @@ import mx.unam.ciencias.is.modelo.Materia;
 import mx.unam.ciencias.is.modelo.MateriaDAO;
 import mx.unam.ciencias.is.modelo.Profesor;
 import mx.unam.ciencias.is.modelo.ProfesorDAO;
+import mx.unam.ciencias.is.modelo.Clase;
+import mx.unam.ciencias.is.modelo.ClaseDAO;
+
 
 
 
@@ -42,6 +45,11 @@ public class ControladorProfesor {
     
     @Autowired
     private MateriaDAO materia_bd;
+    @Autowired
+    private ProfesorDAO profesor_bd;
+    
+    @Autowired
+    private ClaseDAO clase_bd;
     
     
     
@@ -60,14 +68,32 @@ public class ControladorProfesor {
      @RequestMapping(value="/prof/crearSes/crear", method = RequestMethod.GET)
     public ModelAndView crear(HttpServletRequest request,ModelMap model){
         Long id = Long.parseLong(request.getParameter("materia"));
+         String correo=request.getParameter("correoP");
+        Long costo=Long.parseLong(request.getParameter("costo"));
+        System.out.println("////////////////////crear materia ////////////////////////");
+        System.out.println(id+" - hola");
+         System.out.println(correo+" - hola2");
+        System.out.println(costo+" - hola3");
+        System.out.println("////////////////////fin////////////////////////");
         
-         System.out.println(id+"- hola");
-        String correo=request.getParameter("correoUs");
-         System.out.println(correo+"- hola2");
-        String costo=request.getParameter("costo");
-         System.out.println(costo+"- hola3");
+        Materia mat = materia_bd.getMateria(id);
+        
+         Usuario u = usuario_bd.getUsuario(correo);
+         
+         Profesor prof=profesor_bd.getProfesor(u.getIdPersona());
+         
+         
+         
+         Clase c = new Clase(costo,mat,prof);
+        
+        clase_bd.guardar(c);
+         
          model.addAttribute("mat",costo);
         
+         
+         
+         
+         
         return new ModelAndView("sessionP",model);
     
     }
@@ -76,13 +102,18 @@ public class ControladorProfesor {
     public ModelAndView ver(HttpServletRequest request,ModelMap model){
         
         Long id = Long.parseLong(request.getParameter("nivel"));
-        String correo=request.getParameter("correoUs");
+        String correo=request.getParameter("correoU");
+        System.out.println("////////////////////ver materia////////////////////////");
         System.out.println(id+"- hola");
         System.out.println(correo+"- hola2");
+        
+        
+        System.out.println("//////////////////// fin ver materia////////////////////////");
         List<Materia> materias = materia_bd.getMateriasPorNivel(id);
        // if(materias!=null){
             model.addAttribute("mat",materias);
-                model.addAttribute("correo",correo);
+           
+            model.addAttribute("correo",correo);
         
         //}
         

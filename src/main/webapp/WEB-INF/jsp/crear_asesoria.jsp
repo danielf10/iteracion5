@@ -85,28 +85,28 @@
               
                     <form action="/inicio/prof/crearSes/verMat" method="GET" >
                     <input id="hola" name="nivel" hidden="true" value="1">
-                           <input id="hola" name="correoUs" hidden="true" value="${Correo}">
+                           <input id="a" name="correoU" hidden="true" value="${Correo}">
                     <button>primaria</button>
                     
                     </form>  
                
                         <form action="/inicio/prof/crearSes/verMat" method="GET" >
-                        <input id="hola" name="nivel" hidden="true" value="2">
-                               <input id="hola" name="correoUs" hidden="true" value="${correo}">
+                        <input id="hoa" name="nivel" hidden="true" value="2">
+                               <input id="hola1" name="correoU" hidden="true" value="${correo}">
                         <button>secundaria</button>
                     
                         </form>  
                     
                         <form action="/inicio/prof/crearSes/verMat" method="GET" >
-                        <input id="hola" name="nivel" hidden="true" value="3">
-                               <input id="hola" name="correoUs" hidden="true" value="${correo}">
+                        <input id="ha" name="nivel" hidden="true" value="3">
+                               <input id="hola2" name="correoU" hidden="true" value="${correo}">
                         <button>prepapratoria</button>
                     
                         </form>  
                     
                         <form action="/inicio/prof/crearSes/verMat" method="GET" >
-                        <input id="hola" name="nivel" hidden="true" value="4">
-                               <input id="hola" name="correoUs" hidden="true" value="${correo}">
+                        <input id="h" name="nivel" hidden="true" value="4">
+                               <input id="hola3" name="correoU" hidden="true" value="${correo}">
                         <button>universidad</button>
                     
                         </form>  
@@ -139,7 +139,7 @@
                 
                
                 
-                <input id="hola" name="correoUs" hidden="true" value="${correo}">
+                <input id="hollla" name="correoP" hidden="true" value="${correo}">
                 
                  <button>crear</button>
                

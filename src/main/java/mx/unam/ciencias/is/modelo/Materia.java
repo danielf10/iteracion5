@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 /**
@@ -24,7 +25,7 @@ import javax.persistence.Temporal;
 
 @Entity
 @Table(name="materia")
-public class Materia {
+public class Materia implements Serializable {
     
     @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
@@ -42,6 +43,9 @@ public class Materia {
     
     
      
+     
+     
+     
     public long getIdmateria() {
         return idmateria;
     }
@@ -50,8 +54,21 @@ public class Materia {
         this.idmateria = idmateria;
     }
     
+     @OneToMany(mappedBy = "materia")
+    private Set<Clase> clases; 
+
+    public Set<Clase> getClases() {
+        return clases;
+    }
+
+    public void setClases(Set<Clase> clases) {
+        this.clases = clases;
+    }
+
+   
      
-     
+    
+    
      
     public String getNombre() {
         return nombre;

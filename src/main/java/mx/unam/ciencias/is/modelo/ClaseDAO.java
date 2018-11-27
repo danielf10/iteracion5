@@ -5,6 +5,7 @@
  */
 package mx.unam.ciencias.is.modelo;
 
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -14,9 +15,9 @@ import org.hibernate.Query;
  *
  * @author Daniel
  */
-public class ProfesorDAO {
+public class ClaseDAO {
     
-    private SessionFactory sessionFactory;
+     private SessionFactory sessionFactory;
     
     /**
      * Inicializa la sesión para conectarse con la base de datos
@@ -27,18 +28,14 @@ public class ProfesorDAO {
 }
     
     
-     /**
-     * Método que guarda el rol del profesor de un  usuario en la base de datos
-     * @param profesor
-     */
-    public void guardar(Profesor profesor) {
+     public void guardar(Clase clase) {
     
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
            tx = session.beginTransaction();
          
-           session.persist(profesor);
+           session.persist(clase);
            
            tx.commit();
         }
@@ -51,15 +48,16 @@ public class ProfesorDAO {
            session.close();
         }
     
-}
-    
-    public Profesor getProfesor(long idprofesor) {
-        Profesor persona = null;
+    }
+     
+     
+      public Clase getClase(long id) {
+        Clase clase = null;
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
            tx = session.beginTransaction();
-           persona = (Profesor)session.get(Profesor.class, idprofesor);
+           clase = (Clase)session.get(Clase.class, id);
            tx.commit();
         }
         catch (Exception e) {
@@ -70,13 +68,34 @@ public class ProfesorDAO {
         }finally {
            session.close();
         }
-        return persona;
+        return clase;
     }
-    
-    
-    
-    
-    
+      
+      
+      
+      
+      
+       public List<Clase> obtenerListaClase() {
+        
+            
+           
+             List<Clase> result = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            String hql = " from Session";
+            Query query = session.createQuery(hql);
+            result = (List<Clase>)query.list();
+            tx.commit();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return result;
+}
     
     
 }

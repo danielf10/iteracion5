@@ -55,6 +55,16 @@ public class Profesor implements Serializable {
 
     
     
+     @OneToMany(mappedBy = "profesor")
+    private Set<Clase> clases;
+
+    public Set<Clase> getClases() {
+        return clases;
+    }
+
+    public void setClases(Set<Clase> clases) {
+        this.clases = clases;
+    }
     
     
     

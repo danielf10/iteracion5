@@ -62,7 +62,7 @@ public class MateriaDAO {
         Transaction tx = null;
         try {
            tx = session.beginTransaction();
-           mat = (Materia)session.get(Nivel.class, id);
+           mat = (Materia)session.get(Materia.class,id);
            tx.commit();
         }
         catch (Exception e) {
@@ -76,6 +76,28 @@ public class MateriaDAO {
         return mat;
     }
     
+    public Materia getMat(long idmat) {
+        Materia result = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            String hql = " from Materia where idmateria = :id";
+            Query query = session.createQuery(hql);
+            query.setParameter("id", idmat);
+            result = (Materia)query.uniqueResult();
+            tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+        return result;
+    }
     
     
     

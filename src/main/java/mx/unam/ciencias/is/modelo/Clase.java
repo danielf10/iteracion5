@@ -67,7 +67,7 @@ public class Clase  implements Serializable{
     }
     
     @ManyToOne
-    @JoinColumn(name="idMateria")
+    @JoinColumn(name="idmateria")
     private Materia materia;
 
     public Materia getMateria() {

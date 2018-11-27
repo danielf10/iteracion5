@@ -75,8 +75,13 @@ public class ControladorProfesor {
          System.out.println(correo+" - hola2");
         System.out.println(costo+" - hola3");
         System.out.println("////////////////////fin////////////////////////");
+      
         
-        Materia mat = materia_bd.getMateria(id);
+       // Materia ma = materia_bd.getMateria;
+        Materia ma = materia_bd.getMat(id);
+        
+        System.out.println("/sasa///////////////////algo de la materia////////////////////////");
+        System.out.println(ma.getIdmateria()+" "+ma.getNombre() +"materia su id no esta vacio ");
         
          Usuario u = usuario_bd.getUsuario(correo);
          
@@ -84,7 +89,7 @@ public class ControladorProfesor {
          
          
          
-         Clase c = new Clase(costo,mat,prof);
+         Clase c = new Clase(costo,ma,prof);
         
         clase_bd.guardar(c);
          

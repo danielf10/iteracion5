@@ -56,13 +56,13 @@ public class MateriaDAO {
     
     
     
-    public Materia getMateria(long id) {
+    public Materia getMateria(long idmateria) {
         Materia mat = null;
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
            tx = session.beginTransaction();
-           mat = (Materia)session.get(Materia.class,id);
+           mat = (Materia)session.get(Materia.class, idmateria);
            tx.commit();
         }
         catch (Exception e) {

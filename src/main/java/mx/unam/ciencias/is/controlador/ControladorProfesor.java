@@ -27,6 +27,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
@@ -77,11 +79,11 @@ public class ControladorProfesor {
         System.out.println("////////////////////fin////////////////////////");
       
         
-       // Materia ma = materia_bd.getMateria;
-        Materia ma = materia_bd.getMat(id);
+        Materia ma = materia_bd.getMateria(id);
+        //Materia ma = materia_bd.getMat(id);
         
         System.out.println("/sasa///////////////////algo de la materia////////////////////////");
-        System.out.println(ma.getIdmateria()+" "+ma.getNombre() +"materia su id no esta vacio ");
+        
         
          Usuario u = usuario_bd.getUsuario(correo);
          

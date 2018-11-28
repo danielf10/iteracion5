@@ -85,13 +85,14 @@ public class Clase  implements Serializable{
     }
     
     
-    public Clase(long idClase, long costo, Profesor profesor) {
+    public Clase(long idClase, long costo,Materia materia, Profesor profesor) {
         this.idClase = idClase;
         this.costo = costo;
+        this.materia=materia;
         this.profesor = profesor;
     }
     
-    public Clase( long costo,Materia materia ,Profesor profesor) {
+    public Clase( long costo,Materia materia,Profesor profesor) {
      
         this.costo = costo;
         this.materia=materia;

@@ -123,18 +123,18 @@ public class ControladorIndex {
 }
     
     
-     @RequestMapping(value="/verProf", method = RequestMethod.GET)
+     @RequestMapping(value="/consultProf", method = RequestMethod.GET)
     public ModelAndView profe(HttpServletRequest request,ModelMap model){
         
-        Long id = Long.parseLong(request.getParameter("mate"));
-       System.out.println(id+"- hola");
-       List<Materia> materias = materia_bd.getMateriasPorNivel(id);
-        if(materias!=null){
-           model.addAttribute("mat",materias);
+        //Long id = Long.parseLong(request.getParameter("mate"));
+       //System.out.println(id+"- hola");
+       //List<Materia> materias = materia_bd.getMateriasPorNivel(id);
+        //if(materias!=null){
+          // model.addAttribute("mat",materias);
         
-        }
+       // }
         
-        return new ModelAndView("materias",model);
+        return new ModelAndView("verProf");
     
     
     

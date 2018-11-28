@@ -36,7 +36,7 @@
     <body>
         
         <nav class="gtco-nav" role="navigation">
-		<div class="gtco-container" style="background-image:url(imagenes/b3.jpg);height:80px; color: black  ">
+		<div class="gtco-container" style="background-image:url(prof/imagenes/b3.jpg);height:80px; color: black  ">
 			
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">

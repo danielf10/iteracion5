@@ -61,7 +61,7 @@ private AlumnoDAO alumno_bd;
    
    @RequestMapping(value="/alum/inicioAl/verClases", method = RequestMethod.GET)
     public ModelAndView verClas(HttpServletRequest request,ModelMap model){
-        String correo=request.getParameter("correoUs");
+        String correo=request.getParameter("correo");
         
          List<Nivel> nv = nivel_bd.obtenerListaNivel();
          
@@ -69,7 +69,41 @@ private AlumnoDAO alumno_bd;
         model.addAttribute("nv",nv);
         
         
-        return new ModelAndView("verClase_alum",model);
+        return new ModelAndView("verNivel_alum",model);
+    
+    }
+    
+    
+    
+     @RequestMapping(value="/alum/inicioAl/verClases/consultaMat_alum", method = RequestMethod.GET)
+    public ModelAndView verM(HttpServletRequest request,ModelMap model){
+        String correo=request.getParameter("correo");
+         Long id = Long.parseLong(request.getParameter("mate"));
+          List<Materia> materias = materia_bd.getMateriasPorNivel(id);
+        if(materias!=null){
+           model.addAttribute("mat",materias);
+           
+        }
+           model.addAttribute("correo",correo);
+        
+        
+        
+        return new ModelAndView("verMate_alum",model);
+    
+    }
+    
+    
+    @RequestMapping(value="/alum/inicioAl/verClases/consultaMat_alum/consultProf_alum", method = RequestMethod.GET)
+    public ModelAndView verProfe(HttpServletRequest request,ModelMap model){
+        String correo=request.getParameter("correo");
+         Long id = Long.parseLong(request.getParameter("mate"));
+          
+        
+           model.addAttribute("correo",correo);
+        
+        
+        
+        return new ModelAndView("verProf_alum",model);
     
     }
     

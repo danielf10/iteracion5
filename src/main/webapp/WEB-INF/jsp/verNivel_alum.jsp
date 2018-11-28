@@ -53,7 +53,7 @@
                             
                             <div class="col-lg-4 col-md-4 col-sm-6">
                                 
-                                    <form action="/inicio/consultaMat" method="GET">
+                                    <form action="/inicio/alum/inicioAl/verClases/consultaMat_alum" method="GET">
 					
                                         <div data-toggle="modal" data-target="#miModal" class="fh5co-project-item ">
                                             
@@ -67,6 +67,7 @@
                                                         <h3> ${niv.idNivel}  </h3>
 							
                                                          <input id="hola" name="mate" hidden="true" value="${niv.idNivel}">
+                                                          <input id="hola" name="correo" hidden="true" value="${correo}">
 						</div>
                                                 <button data-toggle="modal" data-target="#miModal" >hola</button>
 			</div>

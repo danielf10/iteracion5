@@ -19,9 +19,15 @@
         
         <h3>Nombre : ${usuario.getNombre()}</h3>
         <h3>Rol : ${usuario.getRol()}</h3>
-        
+        <h3>correo: ${usuario.getCorreo()}</h3>
         <form action="/inicio/logout"> 
             <button>hola</button>
         </form> 
+        
+        <form action="/inicio/alum/inicioAl/verClases" method="GET"> 
+             <input id="hola" name="correoUs" hidden="true" value="${usuario.getCorreo()}">
+            <button>ver clases</button>
+        </form> 
+        
     </body>
 </html>

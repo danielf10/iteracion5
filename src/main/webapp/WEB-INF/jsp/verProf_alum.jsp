@@ -58,17 +58,24 @@
         
         
         
+        <c:forEach items="${cl}" var="c">
+            <div>
+                profesor:${c.profesor.usuario.nombre}
+                materia:${c.materia.nombre}
+                
+            </div>
         
-        
-        
-        
+         </c:forEach>
         
         
          <div  class="gtco-section border-bottom" style="margin-top:5% ">
+             
              <div class="gtco-container"> 
         <div class="blog-card">
 	<div class="photo photo1"></div>
 	
+        
+        
 	<div class="description">
 		<h1>Learning to Code</h1>
 		<h2>Opening a door to the future</h2>
@@ -90,6 +97,7 @@
         </div>
                  
        </div>
+           
          </div>
     </body>
 </html>

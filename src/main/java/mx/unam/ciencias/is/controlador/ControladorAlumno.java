@@ -96,8 +96,15 @@ private AlumnoDAO alumno_bd;
     @RequestMapping(value="/alum/inicioAl/verClases/consultaMat_alum/consultProf_alum", method = RequestMethod.GET)
     public ModelAndView verProfe(HttpServletRequest request,ModelMap model){
         String correo=request.getParameter("correo");
-         Long id = Long.parseLong(request.getParameter("mate"));
+         Long id = Long.parseLong(request.getParameter("materia"));
           
+         
+         List<Clase> clases = clase_bd.getClasesPorMateria(id);
+       
+        if(clases!=null){
+           model.addAttribute("cl",clases);
+           
+        }
         
            model.addAttribute("correo",correo);
         

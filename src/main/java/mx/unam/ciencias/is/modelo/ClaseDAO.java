@@ -96,6 +96,35 @@ public class ClaseDAO {
         }
         return result;
 }
+       
+       
+       
+        public List<Clase>getClasesPorMateria(Long idmateria){
+        List<Clase> clases = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx =null;
+        try{
+            tx = session.beginTransaction();
+   // String hql = " from Materia m join m.nivel n where n.idNivel = :id";
+            String hql = "from Clase c where c.materia.idmateria = :id";
+            Query query = session.createQuery(hql);
+            query.setParameter("id", idmateria);
+            clases = (List<Clase>)query.list();
+            tx.commit();
+        }
+        catch(Exception e){
+            if(tx!=null){
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }finally{
+            session.close();
+        }
+        
+        return clases;
+            
+            
+    }
     
     
 }

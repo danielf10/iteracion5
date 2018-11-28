@@ -37,7 +37,7 @@ public class Clase  implements Serializable{
 
     
 
-   @ManyToOne(fetch = FetchType.LAZY)
+   @ManyToOne//(fetch = FetchType.LAZY)
     @JoinColumn(name = "idProfesor")
     private Profesor profesor;
     

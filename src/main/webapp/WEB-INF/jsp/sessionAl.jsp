@@ -29,5 +29,10 @@
             <button>ver clases</button>
         </form> 
         
+            <form action="/inicio/alum/inicioAl/verPC" method="GET"> 
+            <input id="hola" name="correoUs" hidden="true" value="${usuario.getCorreo()}">
+            <button>peticiones de clase </button>
+        </form>  
+        
     </body>
 </html>

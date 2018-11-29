@@ -15,7 +15,7 @@ import org.hibernate.Query;
  *
  * @author Daniel
  */
-public class ClaseDAO {
+public class PedirClaseDAO {
     
      private SessionFactory sessionFactory;
     
@@ -28,14 +28,19 @@ public class ClaseDAO {
 }
     
     
-     public void guardar(Clase clase) {
+    
+    /**
+     * Método que guarda un usuario en la base de datos
+     * @param pedirClase
+     */
+    public void guardar(PedirClase pedirClase) {
     
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
            tx = session.beginTransaction();
          
-           session.persist(clase);
+           session.persist(pedirClase);
            
            tx.commit();
         }
@@ -49,15 +54,45 @@ public class ClaseDAO {
         }
     
     }
-     
-     
-      public Clase getClase(long id) {
-        Clase clase = null;
+    
+   
+    
+    
+    /**
+     * Método que elimina a un usuario de la base de datos
+     * @param pedirClase
+     */
+    public void eliminar(PedirClase pedirClase) {
+    
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
            tx = session.beginTransaction();
-           clase = (Clase)session.get(Clase.class, id);
+         
+           session.delete(pedirClase);
+           
+           tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+    
+    }
+    
+    
+    
+     public PedirClase getPedirClase(long idPedirClase) {
+        PedirClase clase = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+           tx = session.beginTransaction();
+           clase = (PedirClase)session.get(PedirClase.class, idPedirClase);
            tx.commit();
         }
         catch (Exception e) {
@@ -70,46 +105,21 @@ public class ClaseDAO {
         }
         return clase;
     }
-      
-      
-      
-      
-      
-       public List<Clase> obtenerListaClase() {
-        
-            
-           
-             List<Clase> result = null;
-        Session session = sessionFactory.openSession();
-        Transaction tx = null;
-        try {
-            tx = session.beginTransaction();
-            String hql = " from Session";
-            Query query = session.createQuery(hql);
-            result = (List<Clase>)query.list();
-            tx.commit();
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
-        return result;
-}
-       
-       
-       
-        public List<Clase>getClasesPorMateria(Long idmateria){
-        List<Clase> clases = null;
+     
+     
+     
+     
+      public List<PedirClase>getPedirClasesPorClase(Long idclase){
+        List<PedirClase> clases = null;
         Session session = sessionFactory.openSession();
         Transaction tx =null;
         try{
             tx = session.beginTransaction();
    // String hql = " from Materia m join m.nivel n where n.idNivel = :id";
-            String hql = "from Clase c where c.materia.idmateria = :id";
+            String hql = "from PedirClase pc where pc.clase.idclase = :id";
             Query query = session.createQuery(hql);
-            query.setParameter("id", idmateria);
-            clases = (List<Clase>)query.list();
+            query.setParameter("id", idclase);
+            clases = (List<PedirClase>)query.list();
             tx.commit();
         }
         catch(Exception e){
@@ -125,31 +135,16 @@ public class ClaseDAO {
             
             
     }
-        
-        
-        //metodo que da una clase por id de una materia 
-      public Clase getClaseM(Long idclase ) {
-       Clase clase = null;
-        Session session = sessionFactory.openSession();
-        Transaction tx = null;
-        try {
-            tx = session.beginTransaction();
-            String hql = "from Clase c where c.materia.idmateria = :id";
-            Query query = session.createQuery(hql);
-            query.setParameter("id", idclase);
-            clase = (Clase)query.uniqueResult();
-            tx.commit();
-        }
-        catch (Exception e) {
-           if (tx!=null){
-               tx.rollback();
-           }
-           e.printStackTrace(); 
-        }finally {
-           session.close();
-        }
-        return clase;
-    }
+      
+      
+      
+    
+    
+    
+    
+    
+    
+    
     
     
 }

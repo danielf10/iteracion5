@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 /**
@@ -76,6 +77,18 @@ public class Clase  implements Serializable{
 
     public void setMateria(Materia materia) {
         this.materia = materia;
+    }
+    
+    
+    @OneToMany(mappedBy = "clase")
+    private Set<PedirClase> PerdirClases;
+
+    public Set<PedirClase> getPerdirClases() {
+        return PerdirClases;
+    }
+
+    public void setPerdirClases(Set<PedirClase> PerdirClases) {
+        this.PerdirClases = PerdirClases;
     }
     
     

@@ -58,31 +58,40 @@
         
         
         
-        <c:forEach items="${cl}" var="c">
+      
             <div>
-                profesor:${c.profesor.usuario.nombre}
-                materia:${c.materia.nombre}
+                profesor:
+                materia:
                 
             </div>
         
-         </c:forEach>
+        
         
         
          <div  class="gtco-section border-bottom" style="margin-top:5% ">
-             
+              
              <div class="gtco-container"> 
+                  <c:forEach items="${cl}" var="c">
         <div class="blog-card">
 	<div class="photo photo1"></div>
 	
         
         
 	<div class="description">
-		<h1>Learning to Code</h1>
-		<h2>Opening a door to the future</h2>
+		<h1>${c.profesor.usuario.nombre}  ${c.profesor.usuario.app}  </h1>
+		<h2>${c.materia.nombre}</h2>
 		<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-		<a href="#">Read More</a>
+		
+                <form action="/inicio/alum/inicioAl/verClases/consultaMat_alum/verProf_alum/pedirClass" method="GET">
+                  
+                     <input id="hola" name="correo" hidden="true" value="${correo}">
+                     <input id="hola" name="materia" hidden="true" value="${materia}">
+                    <button  class="btn btn-default btn-sm">pedir session</button> 
+                    
+                </form>
 	</div>
 </div>
+                 </c:forEach>
         
         
         <div class="blog-card alt">
@@ -97,6 +106,7 @@
         </div>
                  
        </div>
+             
            
          </div>
     </body>

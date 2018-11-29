@@ -16,6 +16,9 @@ import mx.unam.ciencias.is.modelo.Alumno;
 import mx.unam.ciencias.is.modelo.AlumnoDAO;
 import mx.unam.ciencias.is.modelo.Materia;
 import mx.unam.ciencias.is.modelo.MateriaDAO;
+import mx.unam.ciencias.is.modelo.PedirClase;
+import mx.unam.ciencias.is.modelo.PedirClaseDAO;
+
 import mx.unam.ciencias.is.modelo.Profesor;
 import mx.unam.ciencias.is.modelo.ProfesorDAO;
 import mx.unam.ciencias.is.modelo.Clase;
@@ -56,12 +59,29 @@ public class ControladorAlumno {
     
    @Autowired
 private AlumnoDAO alumno_bd;
+   
+    @Autowired
+    private PedirClaseDAO pc_bd;
     
    
    
    @RequestMapping(value="/alum/inicioAl/verClases", method = RequestMethod.GET)
     public ModelAndView verClas(HttpServletRequest request,ModelMap model){
-        String correo=request.getParameter("correo");
+        String correo=request.getParameter("correoUs");
+        
+         List<Nivel> nv = nivel_bd.obtenerListaNivel();
+         
+        model.addAttribute("correo",correo); 
+        model.addAttribute("nv",nv);
+        
+        
+        return new ModelAndView("verNivel_alum",model);
+    
+    }
+    
+    @RequestMapping(value="/alum/inicioAl/verPC", method = RequestMethod.GET)
+    public ModelAndView verPC(HttpServletRequest request,ModelMap model){
+        String correo=request.getParameter("correoUs");
         
          List<Nivel> nv = nivel_bd.obtenerListaNivel();
          
@@ -107,6 +127,7 @@ private AlumnoDAO alumno_bd;
         }
         
            model.addAttribute("correo",correo);
+           model.addAttribute("materia",id);
         
         
         
@@ -114,6 +135,32 @@ private AlumnoDAO alumno_bd;
     
     }
     
+    
+    
+     @RequestMapping(value="/alum/inicioAl/verClases/consultaMat_alum/verProf_alum/pedirClass", method = RequestMethod.GET)
+    public ModelAndView perdirClase(HttpServletRequest request,ModelMap model){
+        String correo=request.getParameter("correo");
+         Long id = Long.parseLong(request.getParameter("materia"));
+          
+        Usuario us=usuario_bd.getUsuario(correo);
+        Alumno alumno=alumno_bd.getAlumno(us.getIdPersona());
+        
+        Clase clase=clase_bd.getClaseM(id);
+        
+        PedirClase pcl=new PedirClase(0,alumno,clase);
+        pc_bd.guardar(pcl);
+        
+        
+       
+        
+        
+        model.addAttribute("correo",correo);
+        
+        
+        
+        return new ModelAndView("sessionAl",model);
+    
+    }
     
     
     

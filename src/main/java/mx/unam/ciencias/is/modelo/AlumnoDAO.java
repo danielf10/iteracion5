@@ -53,6 +53,27 @@ private SessionFactory sessionFactory;
         }
     
 }
+    
+    
+    public Alumno getAlumno(long idAlumno) {
+        Alumno alumno = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+           tx = session.beginTransaction();
+           alumno = (Alumno)session.get(Alumno.class, idAlumno);
+           tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }
+        return alumno;
+    }
 
 
     

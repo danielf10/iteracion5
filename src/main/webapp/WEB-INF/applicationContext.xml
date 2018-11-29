@@ -40,7 +40,7 @@
                 <value>mx.unam.ciencias.is.modelo.Alumno</value>
                 <value>mx.unam.ciencias.is.modelo.Profesor</value>
                 <value>mx.unam.ciencias.is.modelo.Clase</value>
-                <value>mx.unam.ciencias.is.modelo.Pedir_session</value>
+                <value>mx.unam.ciencias.is.modelo.PedirClase</value>
                 
                 
                 
@@ -65,7 +65,7 @@
     <bean id="AlumnoDAO" class="mx.unam.ciencias.is.modelo.AlumnoDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <bean id="ProfesorDAO" class="mx.unam.ciencias.is.modelo.ProfesorDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <bean id="SessionDAO" class="mx.unam.ciencias.is.modelo.ClaseDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
-    <bean id="Pedir_sessionDAO" class="mx.unam.ciencias.is.modelo.Pedir_sessionDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="PedirClaseDAO" class="mx.unam.ciencias.is.modelo.PedirClaseDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
   
     <!-- SpringSecurity -->
     <security:http pattern="/css/*" security="none"/>

@@ -18,6 +18,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.OneToOne;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -50,6 +51,16 @@ public class Alumno implements Serializable {
     }
 
 
+@OneToMany(mappedBy = "alumno")
+    private Set<PedirClase> PerdirClases;
+
+    public Set<PedirClase> getPerdirClases() {
+        return PerdirClases;
+    }
+
+    public void setPerdirClases(Set<PedirClase> PerdirClases) {
+        this.PerdirClases = PerdirClases;
+    }
 
 
 

@@ -45,8 +45,8 @@
 							</ul>
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>
-						<li><a href="<c:url value="/consulta"/>">Contact</a></li>
-						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Inicio</span></a></li>
+						<li><a href="<c:url value="/"/>">Iniciar Session</a></li>
+						<li class="btn-cta"><a href="<c:url value="/"/>"><span>Registrarse</span></a></li>
 					</ul>
 				</div>
 			
@@ -66,28 +66,24 @@
         
          <div  class="gtco-section border-bottom" style="margin-top:5% ">
              <div class="gtco-container"> 
+         <c:forEach items="${cl}" var="c">
         <div class="blog-card">
 	<div class="photo photo1"></div>
 	
+        
+        
 	<div class="description">
-		<h1>Learning to Code</h1>
-		<h2>Opening a door to the future</h2>
+		<h1>${c.profesor.usuario.nombre}  ${c.profesor.usuario.app}  </h1>
+		<h2>${c.materia.nombre}</h2>
 		<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-		<a href="#">Read More</a>
+		
+               
 	</div>
 </div>
+                 </c:forEach>
         
         
-        <div class="blog-card alt">
-        
-        
-            <div class="description">
-		<h1>Mastering the Language</h1>
-		<h2>Java is not the same as JavaScript</h2>
-		<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-		<a href="#">Read More</a>
-            </div>
-        </div>
+       
                  
        </div>
          </div>

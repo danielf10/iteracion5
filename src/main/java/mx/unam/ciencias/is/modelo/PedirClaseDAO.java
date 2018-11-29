@@ -137,7 +137,32 @@ public class PedirClaseDAO {
     }
       
       
-      
+       public List<PedirClase>getPedirClasesPorAlumno(Long idalumno){
+        List<PedirClase> clases = null;
+        Session session = sessionFactory.openSession();
+        Transaction tx =null;
+        try{
+            tx = session.beginTransaction();
+   String hql = " from PedirClase pc join m.alumno a join a.usuario u where u.idPersona = :id";
+           // String hql = "from PedirClase pc where pc.alumno  = :id";
+            Query query = session.createQuery(hql);
+            query.setParameter("id", idalumno);
+            clases = (List<PedirClase>)query.list();
+            tx.commit();
+        }
+        catch(Exception e){
+            if(tx!=null){
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }finally{
+            session.close();
+        }
+        
+        return clases;
+            
+            
+    } 
     
     
     

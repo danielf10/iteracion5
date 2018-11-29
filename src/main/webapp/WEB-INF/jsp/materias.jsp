@@ -41,8 +41,8 @@
 							</ul>
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>
-						<li><a href="<c:url value="/consulta"/>">Contact</a></li>
-						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Inicio</span></a></li>
+						<li><a href="<c:url value="/"/>">Iniciar Session</a></li>
+						<li class="btn-cta"><a href="<c:url value="/"/>"><span>Registrarse</span></a></li>
 					</ul>
 				</div>
 			

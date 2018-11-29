@@ -6,7 +6,10 @@
 package mx.unam.ciencias.is.controlador;
 
 import java.security.Principal;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import mx.unam.ciencias.is.modelo.PedirClase;
+import mx.unam.ciencias.is.modelo.PedirClaseDAO;
 import mx.unam.ciencias.is.modelo.Usuario;
 import mx.unam.ciencias.is.modelo.UsuarioDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,8 @@ public class ControladorSesion {
     
     @Autowired
     private UsuarioDAO usuario_bd;
+     @Autowired
+    private PedirClaseDAO pc_bd;
     
     @RequestMapping(value="/home", method = RequestMethod.GET)
     public String home(HttpServletRequest request,Principal principal){
@@ -91,7 +96,12 @@ public class ControladorSesion {
     public ModelAndView inicioAl(HttpServletRequest request,ModelMap model ,Principal principal){
         
         Usuario u = usuario_bd.getUsuario(principal.getName());
+        
+       
+        
+        // List<PedirClase> pc = pc_bd.getPedirClasesPorAlumno(u.getIdPersona());
         model.addAttribute("usuario", u);
+        // model.addAttribute("p",pc);
         
         return new ModelAndView("sessionAl",model);
     }

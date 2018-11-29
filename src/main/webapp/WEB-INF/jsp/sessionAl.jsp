@@ -26,13 +26,16 @@
         
         <form action="/inicio/alum/inicioAl/verClases" method="GET"> 
              <input id="hola" name="correoUs" hidden="true" value="${usuario.getCorreo()}">
+                
             <button>ver clases</button>
         </form> 
-        
-            <form action="/inicio/alum/inicioAl/verPC" method="GET"> 
-            <input id="hola" name="correoUs" hidden="true" value="${usuario.getCorreo()}">
-            <button>peticiones de clase </button>
-        </form>  
+             
+          <h1>peticiones de clase aceptadas </h1>    
+          <!--<//c:forEach items="${p}" var="pec">
+             <h3>materia : </${pec.materia.nombre}</h3> 
+              
+          <///c:forEach>
+            -->
         
     </body>
 </html>

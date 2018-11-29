@@ -8,6 +8,8 @@ package mx.unam.ciencias.is.controlador;
 import java.security.Principal;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import mx.unam.ciencias.is.modelo.Clase;
+import mx.unam.ciencias.is.modelo.ClaseDAO;
 import mx.unam.ciencias.is.modelo.Usuario;
 import mx.unam.ciencias.is.modelo.Nivel;
 import mx.unam.ciencias.is.modelo.UsuarioDAO;
@@ -37,6 +39,9 @@ public class ControladorIndex {
    NivelDAO nivel_bd;
      @Autowired
    MateriaDAO materia_bd;
+     
+     @Autowired
+    private ClaseDAO clase_bd;
     
      /**
       * Metodo que responde a la peticion raiz
@@ -126,13 +131,18 @@ public class ControladorIndex {
      @RequestMapping(value="/consultProf", method = RequestMethod.GET)
     public ModelAndView profe(HttpServletRequest request,ModelMap model){
         
-        //Long id = Long.parseLong(request.getParameter("mate"));
-       //System.out.println(id+"- hola");
-       //List<Materia> materias = materia_bd.getMateriasPorNivel(id);
-        //if(materias!=null){
-          // model.addAttribute("mat",materias);
+        Long id = Long.parseLong(request.getParameter("materia"));
+          
+         
+         List<Clase> clases = clase_bd.getClasesPorMateria(id);
+       
+        if(clases!=null){
+           model.addAttribute("cl",clases);
+           
+        }
         
-       // }
+          
+           model.addAttribute("materia",id);
         
         return new ModelAndView("verProf");
     

@@ -82,11 +82,12 @@ private AlumnoDAO alumno_bd;
     @RequestMapping(value="/alum/inicioAl/verPC", method = RequestMethod.GET)
     public ModelAndView verPC(HttpServletRequest request,ModelMap model){
         String correo=request.getParameter("correoUs");
+         Usuario us=usuario_bd.getUsuario(correo);
         
-         List<Nivel> nv = nivel_bd.obtenerListaNivel();
+         List<PedirClase> pc = pc_bd.getPedirClasesPorAlumno(us.getIdPersona());
          
         model.addAttribute("correo",correo); 
-        model.addAttribute("nv",nv);
+        model.addAttribute("p",pc);
         
         
         return new ModelAndView("verNivel_alum",model);

@@ -66,8 +66,8 @@
 							</ul>
 						</li>
 						<li><a href="pricing.html">Pricing</a></li>
-						<li><a href="<c:url value="/consulta"/>">Contact</a></li>
-						<li class="btn-cta"><a href="<c:url value="/consulta"/>"><span>Inicio</span></a></li>
+						<li><a href="<c:url value="/"/>">Iniciar Session</a></li>
+						<li class="btn-cta"><a href="<c:url value="/"/>"><span>Registrarse</span></a></li>
 					</ul>
 				</div>
 			
@@ -118,11 +118,11 @@
 						</figure>
 						<div class="fh5co-text">
 							<h2>${niv.nombre}</h2>
-                                                        <h3> ${niv.idNivel}  </h3>
+                                                        
 							
                                                          <input id="hola" name="mate" hidden="true" value="${niv.idNivel}">
 						</div>
-                                                <button data-toggle="modal" data-target="#miModal" >hola</button>
+                                                <button  style="margin-left:35% " class="btn btn-info" data-toggle="modal" data-target="#miModal" >Materias</button>
 			</div>
                                     </form>
 				</div>
